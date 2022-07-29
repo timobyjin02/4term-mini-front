@@ -6,6 +6,34 @@ import Join from "./components/Join";
 import Navigation from "./components/Navigation";
 import RandomPost from "./components/RandomPost";
 import Main from "./components/Main";
+import RandomPost from "./components/RandomPost";
+
+injectGlobal`
+  * {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box; 
+  }
+  textarea {
+    resize: none;
+  }
+  button {
+    cursor: pointer;
+    background-color: inherit;
+  } 
+  ul {
+    list-style: none;
+  }
+  li {
+    list-style:none;
+  }
+  a, a:visited, a:link {
+    color: inherit;
+    text-decoration: none;
+  }
+`;
 
 function App() {
   return (
