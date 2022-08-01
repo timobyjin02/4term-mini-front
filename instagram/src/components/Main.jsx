@@ -1,11 +1,11 @@
 import Navigation from "./Navigation";
-import Card from "./Card";
+import MainBoard from "./MainBoard";
 
 function Main() {
   return (
     <>
       <Navigation />
-      <Card />
+      <MainBoard />
     </>
   );
 }
