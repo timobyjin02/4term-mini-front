@@ -1,12 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { injectGlobal } from "@emotion/css";
-import Login from "./components/Login";
+import LoginPage from "./components/LoginPage";
 import Join from "./components/Join";
 import Navigation from "./components/Navigation";
-import RandomPost from "./components/RandomPost";
 import Main from "./components/Main";
-import RandomPost from "./components/RandomPost";
+import Explore from "./components/Explore";
 
 injectGlobal`
   * {
@@ -39,10 +38,10 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />}></Route>
+        <Route path="/" element={<LoginPage />}></Route>
         <Route path="/Join" element={<Join />}></Route>
         <Route path="/Navigation" element={<Navigation />}></Route>
-        <Route path="/random" element={<RandomPost />}></Route>
+        <Route path="/explore" element={<Explore />}></Route>
         <Route path="/main" element={<Main />}></Route>
       </Routes>
     </Router>
