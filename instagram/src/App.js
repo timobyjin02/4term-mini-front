@@ -1,11 +1,23 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { injectGlobal } from "@emotion/css";
-import LoginPage from "./components/LoginPage";
-import Join from "./components/Join";
-import Navigation from "./components/Navigation";
-import Main from "./components/Main";
+import LoginPage from "./pages/LoginPage";
+import SignUp from "./pages/SignUp";
+import MainPage from "./pages/MainPage";
 import Explore from "./components/Explore";
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginPage />}></Route>
+        <Route path="/signup" element={<SignUp />}></Route>
+        <Route path="/explore" element={<Explore />}></Route>
+        <Route path="/main" element={<MainPage />}></Route>
+      </Routes>
+    </Router>
+  );
+}
 
 injectGlobal`
   * {
@@ -33,19 +45,5 @@ injectGlobal`
     text-decoration: none;
   }
 `;
-
-function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<LoginPage />}></Route>
-        <Route path="/Join" element={<Join />}></Route>
-        <Route path="/Navigation" element={<Navigation />}></Route>
-        <Route path="/explore" element={<Explore />}></Route>
-        <Route path="/main" element={<Main />}></Route>
-      </Routes>
-    </Router>
-  );
-}
 
 export default App;
