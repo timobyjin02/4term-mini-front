@@ -37,7 +37,7 @@ export default Navigation;
 
 const DivMain = styled.div`
   width: 100%;
-  height: 100%;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;

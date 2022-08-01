@@ -9,8 +9,13 @@ const palette = {
   searchBg: "#EFEFEF",
 };
 
+const sizes = {
+  explorePhotoBox: "300px",
+};
+
 const theme = {
   palette,
+  sizes,
 };
 
 export default theme;
