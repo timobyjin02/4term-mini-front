@@ -1,4 +1,3 @@
-import React from "react";
 import { ListBox, List, ListNumber } from "../styles/PostsFollows_style";
 
 function PostsFollows() {

@@ -1,4 +1,3 @@
-import React from "react";
 import { ReactComponent as Posticon } from "../assets/posticon.svg";
 import {
   Baseline,

@@ -1,4 +1,3 @@
-import React from "react";
 import ProfilePic from "./ProfilePic";
 import HeaderSection from "./HeaderSection";
 import { HeaderContainer } from "../styles/UserHeader_style";
