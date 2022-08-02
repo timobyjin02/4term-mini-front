@@ -1,5 +1,4 @@
 import {
-  Login,
   LoginBox,
   LoginContainer,
   ImgLogo,
@@ -8,7 +7,6 @@ import {
   LoginBtn,
 } from "../styles/Join_style";
 import React from "react";
-import LoginFooter from "./LoginFooter";
 
 function Join() {
   function handleSubmit(e) {
@@ -16,7 +14,6 @@ function Join() {
     console.log("click");
   }
   return (
-    <Login>
       <LoginBox>
         <LoginContainer>
           <ImgLogo alt="instagram logo" src="img/instagramLogo.png" />
@@ -30,8 +27,6 @@ function Join() {
           </form>
         </LoginContainer>
       </LoginBox>
-      <LoginFooter />
-    </Login>
   );
 }
 

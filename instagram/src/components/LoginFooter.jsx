@@ -10,7 +10,7 @@ function LoginFooter() {
 
   return (
     <Footer>
-      계정이 없으신가요?<Link to="/join">가입하기</Link>
+      계정이 없으신가요?<Link to="/signup">가입하기</Link>
     </Footer>
   );
 }
