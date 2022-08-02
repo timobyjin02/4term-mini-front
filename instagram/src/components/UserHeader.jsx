@@ -1,7 +1,7 @@
 import React from "react";
-import styled from "@emotion/styled";
 import ProfilePic from "./ProfilePic";
 import HeaderSection from "./HeaderSection";
+import { HeaderContainer } from "../styles/UserHeader_style";
 
 function UserHeader() {
   return (
@@ -11,12 +11,5 @@ function UserHeader() {
     </HeaderContainer>
   );
 }
-
-const HeaderContainer = styled.header`
-  width: 935px;
-  height: 150px;
-  margin-top: 30px;
-  display: flex;
-`;
 
 export default UserHeader;

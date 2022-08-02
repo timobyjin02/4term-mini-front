@@ -1,0 +1,27 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { PostingBox, Posts, PostImg } from "../styles/UserPostings_style";
+
+function UserPostings() {
+  return (
+    <PostingBox>
+      <Posts>
+        <Link to="/comments">
+          <PostImg />
+        </Link>
+      </Posts>
+      <Posts>
+        <Link to="comments">
+          <PostImg />
+        </Link>
+      </Posts>
+      <Posts>
+        <Link to="comments">
+          <PostImg />
+        </Link>
+      </Posts>
+    </PostingBox>
+  );
+}
+
+export default UserPostings;

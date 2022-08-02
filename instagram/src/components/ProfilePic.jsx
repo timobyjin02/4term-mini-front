@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import { PictureBox, ProfilePicture } from "../styles/ProfilePic_style";
 
 function ProfilePic() {
   return (
@@ -8,21 +8,5 @@ function ProfilePic() {
     </PictureBox>
   );
 }
-
-const ProfilePicture = styled.div`
-  width: 150px;
-  height: 150px;
-  background-color: lightgray;
-  border-radius: 50%;
-`;
-
-const PictureBox = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-right: 30px;
-
-  width: 300px;
-  height: 150px;
-`;
 
 export default ProfilePic;

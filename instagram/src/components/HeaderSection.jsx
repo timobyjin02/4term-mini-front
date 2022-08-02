@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
 import PostsFollows from "./PostsFollows";
 import IdEditGear from "./IdEditGear";
+import { HeaderContainer, UserName } from "../styles/HeaderSection_style";
 
 function HeaderSection() {
   return (
@@ -11,15 +11,5 @@ function HeaderSection() {
     </HeaderContainer>
   );
 }
-
-const HeaderContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  width: 635px;
-`;
-
-const UserName = styled.span`
-  font-weight: bolder;
-`;
 
 export default HeaderSection;
