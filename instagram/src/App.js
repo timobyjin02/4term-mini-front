@@ -4,7 +4,7 @@ import { injectGlobal } from "@emotion/css";
 import LoginPage from "./pages/LoginPage";
 import SignUp from "./pages/SignUp";
 import MainPage from "./pages/MainPage";
-import Explore from "./components/Explore";
+import Explore from "./pages/Explore";
 
 function App() {
   return (
