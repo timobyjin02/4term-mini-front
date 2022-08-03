@@ -1,4 +1,8 @@
-import { ListBox, List, ListNumber } from "../styles/PostsFollows_style";
+import {
+  ListBox,
+  List,
+  ListNumber,
+} from "../../styles/UserPage/PostsFollows_style";
 
 function PostsFollows() {
   return (

@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
-import { PostingBox, Posts, PostImg } from "../styles/UserPostings_style";
+import {
+  PostingBox,
+  Posts,
+  PostImg,
+} from "../../styles/UserPage/UserPostings_style";
 
 function UserPostings() {
   return (

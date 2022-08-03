@@ -1,8 +1,8 @@
 import Navigation from "../components/Navigation";
-import UserHeader from "../components/UserHeader";
-import UserPostings from "../components/UserPostings";
-import HeaderBaseline from "../components/HeaderBaseline";
-import { Container } from "../styles/UserPage_style";
+import UserHeader from "../components/UserPage/UserHeader";
+import UserPostings from "../components/UserPage/UserPostings";
+import HeaderBaseline from "../components/UserPage/HeaderBaseline";
+import { Container } from "../styles//UserPage/UserPage_style";
 
 function UserPage() {
   return (

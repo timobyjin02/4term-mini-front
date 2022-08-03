@@ -1,4 +1,7 @@
-import { PictureBox, ProfilePicture } from "../styles/ProfilePic_style";
+import {
+  PictureBox,
+  ProfilePicture,
+} from "../../styles/UserPage/ProfilePic_style";
 
 function ProfilePic() {
   return (

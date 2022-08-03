@@ -1,10 +1,10 @@
-import { ReactComponent as Posticon } from "../assets/posticon.svg";
+import { ReactComponent as Posticon } from "../../assets/posticon.svg";
 import {
   Baseline,
   DividingLine,
   PostDiv,
   SpanPost,
-} from "../styles/HeaderBaseline_style";
+} from "../../styles/UserPage/HeaderBaseline_style";
 
 function HeaderBaseline() {
   return (

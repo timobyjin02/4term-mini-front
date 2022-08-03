@@ -1,4 +1,4 @@
-import { ReactComponent as Gearicon } from "../assets/gearicon.svg";
+import { ReactComponent as Gearicon } from "../../assets/gearicon.svg";
 import { Link } from "react-router-dom";
 import {
   IdEditGearBox,
@@ -7,7 +7,7 @@ import {
   GearBtn,
   EditBtnBox,
   EditBtn,
-} from "../styles/IdEditGear_style";
+} from "../../styles/UserPage/IdEditGear_style";
 
 function IdEditGear() {
   return (
@@ -33,7 +33,7 @@ function Gear() {
 function EditButton() {
   return (
     <EditBtnBox>
-      <Link to="/accounts/edit">
+      <Link to="/edit">
         <EditBtn>프로필 편집</EditBtn>
       </Link>
     </EditBtnBox>

@@ -1,6 +1,9 @@
 import PostsFollows from "./PostsFollows";
 import IdEditGear from "./IdEditGear";
-import { HeaderContainer, UserName } from "../styles/HeaderSection_style";
+import {
+  HeaderContainer,
+  UserName,
+} from "../../styles/UserPage/HeaderSection_style";
 
 function HeaderSection() {
   return (
