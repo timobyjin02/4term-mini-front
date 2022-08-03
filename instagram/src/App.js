@@ -6,7 +6,6 @@ import SignUp from "./pages/SignUp";
 import MainPage from "./pages/MainPage";
 import Explore from "./pages/Explore";
 import Post from "./pages/Post";
-import Explore from "./components/Explore";
 import UserPage from "./pages/UserPage";
 
 function App() {

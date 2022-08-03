@@ -12,7 +12,9 @@ function Menu() {
       <Link to="/explore">
         <Notification className="icon" />
       </Link>
-      <ProfileImage alt="profile image" src="img/profile.png" />
+      <Link to="/username">
+        <ProfileImage alt="profile image" src="img/profile.png" />
+      </Link>
     </DivMenu>
   );
 }
