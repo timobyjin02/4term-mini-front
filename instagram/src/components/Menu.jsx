@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ReactComponent as Home } from "../assets/home.svg";
 import { ReactComponent as Post } from "../assets/post.svg";
 import { ReactComponent as Notification } from "../assets/notification.svg";
@@ -8,7 +9,9 @@ function Menu() {
     <DivMenu>
       <Home className="icon" />
       <Post className="icon" />
-      <Notification className="icon" />
+      <Link to="/explore">
+        <Notification className="icon" />
+      </Link>
       <ProfileImage alt="profile image" src="img/profile.png" />
     </DivMenu>
   );

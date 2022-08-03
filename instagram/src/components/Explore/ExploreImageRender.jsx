@@ -1,4 +1,4 @@
-import { ImageBox, Image } from "../styles/Explore_style";
+import { ImageBox, Image } from "../../styles/Explore/Explore_style";
 
 // call PaintImages
 function Images({ count }) {
