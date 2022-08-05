@@ -4,15 +4,16 @@ import { ImageBox, Image } from "../../styles/Explore/Explore_style";
 function Images({ count }) {
   const quotient = parseInt(count / 3);
   const remainder = count % 3;
-  const boxArr = [];
 
   const imageBoxRender = () => {
+    const boxArr = [];
     for (let i = 0; i < quotient; i++) {
       boxArr.push(
         <span key={"box" + i}>
           <PaintImages />
         </span>
       );
+      return boxArr;
     }
     boxArr.push(<PaintImages imageCount={remainder} key={"last Box"} />);
     return boxArr;

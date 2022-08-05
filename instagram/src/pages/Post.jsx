@@ -7,12 +7,13 @@ function Post() {
   const onClickUpload = () => {
     imageInput.current.click();
   };
+
   return (
     <Background>
       <Wrap>
-        <Head>
+        <Header>
           <H1> 새 게시물 만들기</H1>
-        </Head>
+        </Header>
         <Body>
           <UploadImageWrap>
             <UploadImage />
@@ -49,7 +50,7 @@ export const Wrap = styled.div`
   border-radius: 12px;
 `;
 
-export const Head = styled.div`
+export const Header = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,14 +78,14 @@ export const UploadImageWrap = styled.div`
   margin-bottom: 16px;
 `;
 
-export const Text = styled.div`
+export const Text = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 24px;
 `;
 
-export const InputButton = styled.div`
+export const InputButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,7 +94,7 @@ export const InputButton = styled.div`
   padding: 5px 9px;
   border-radius: 4px;
   color: ${({ theme }) => theme.palette.backgroundWhite};
-  /* font-size: 1em; */
+  font-size: 1em;
   cursor: pointer;
 `;
 
@@ -103,5 +104,3 @@ export const Input = styled.input`
   height: 100%;
 `;
 export default Post;
-
-// 버튼 width, heigt
