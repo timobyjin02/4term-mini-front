@@ -1,15 +1,17 @@
-import { useRef } from "react";
+import { useState, useRef } from "react";
 import styled from "@emotion/styled";
 import { ReactComponent as UploadImage } from "../assets/Upload.svg";
 
-function Post() {
+function PostModal({ showModal, setShowModal }) {
   const imageInput = useRef();
   const onClickUpload = () => {
     imageInput.current.click();
   };
 
+  const onClickClose = () => setShowModal(false);
   return (
-    <Background>
+    <Background onClick={onClickClose}>
+      <ExitBtn onClick={onClickClose} />
       <Wrap>
         <Header>
           <H1> 새 게시물 만들기</H1>
@@ -31,14 +33,26 @@ function Post() {
   );
 }
 
+export const ExitBtn = styled.button`
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  right: 0;
+  top: 0;
+`;
 export const Background = styled.div`
   position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
   background-color: ${({ theme }) => theme.palette.modalBackground};
+  cursor: default;
 `;
 
 export const Wrap = styled.div`
@@ -103,4 +117,4 @@ export const Input = styled.input`
   width: 100%;
   height: 100%;
 `;
-export default Post;
+export default PostModal;
