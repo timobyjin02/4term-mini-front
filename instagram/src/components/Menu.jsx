@@ -9,17 +9,15 @@ import PostModal from "../pages/PostModal";
 function Menu() {
   const [showModal, setShowModal] = useState(false);
   const openModal = () => setShowModal(true);
+  console.log(showModal);
   // setShowModal(closed);
-
   return (
     <Wrap>
       <Link to="/main">
         <Home className="icon" />
       </Link>
       <Post onClick={openModal} className="icon" />
-      {showModal ? (
-        <PostModal showModal={showModal} setShowModal={setShowModal} />
-      ) : null}
+      {showModal ? <PostModal setShowModal={setShowModal} /> : null}
       <Link to="/explore">
         <Notification className="icon" />
       </Link>
