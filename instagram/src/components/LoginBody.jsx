@@ -7,12 +7,10 @@ import {
   ImgLogo,
   LoginBtn,
 } from "../styles/LoginPage_Style";
+import KakaoLogin from "./KakaoLogin";
 
 function LoginBody() {
-  // function handleSubmit(e) {
-  //   e.preventDefault();
-  //   console.log("click");
-  // }
+
   return (
       <LoginBox>
         <LoginContainer>
@@ -21,6 +19,7 @@ function LoginBody() {
           <Link to="/main">
             <LoginBtn>로그인</LoginBtn>
           </Link>
+          <KakaoLogin />
         </LoginContainer>
       </LoginBox>
   );

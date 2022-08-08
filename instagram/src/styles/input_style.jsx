@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 export const InputBox = styled.div`
+  margin-top: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,7 +9,7 @@ export const InputBox = styled.div`
 `;
 
 export const InputText = styled.input`
-  box-sizing: border-box; // index.css에
+  box-sizing: border-box;
   width: 268px;
   height: 38px;
   border: 1px solid ${({ theme }) => theme.palette.borderGrey};

@@ -26,9 +26,7 @@ export const LoginContainer = styled.div`
 export const ImgLogo = styled.img`
   position: absolute;
   top: 47px;
-  margin-top: 10px;
   width: 175px;
-  // height: 100%;
 `;
 
 export const LoginBtn = styled.button`
