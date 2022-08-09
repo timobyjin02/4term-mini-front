@@ -1,4 +1,4 @@
-import Navigation from "../components/Navigation";
+import Navigation from "./Navigation";
 import UserHeader from "../components/UserHeader";
 import styled from "@emotion/styled";
 import PostingBox from "../components/PostingBox";
