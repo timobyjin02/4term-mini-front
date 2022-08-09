@@ -1,6 +1,6 @@
-import { Body, Container } from "../styles/Explore_style";
-import Navigation from "../components/Navigation";
-import Images from "../components/ExploreImageRender";
+import { Body, Container } from "../styles/Explore/ExploreStyle";
+import Navigation from "./Navigation";
+import Images from "../components/Explore/ExploreImageRender";
 
 function Explore({ count = 11 }) {
   return (

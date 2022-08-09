@@ -6,7 +6,7 @@ import {
   LoginContainer,
   ImgLogo,
   LoginBtn,
-} from "../styles/LoginPage_Style";
+} from "../styles/LoginPage_style";
 
 function LoginBody() {
   // function handleSubmit(e) {
@@ -14,15 +14,15 @@ function LoginBody() {
   //   console.log("click");
   // }
   return (
-      <LoginBox>
-        <LoginContainer>
+    <LoginBox>
+      <LoginContainer>
         <ImgLogo alt="instagram logo" src="img/instagramLogo.png" />
-          <Input />
-          <Link to="/main">
-            <LoginBtn>로그인</LoginBtn>
-          </Link>
-        </LoginContainer>
-      </LoginBox>
+        <Input />
+        <Link to="/main">
+          <LoginBtn>로그인</LoginBtn>
+        </Link>
+      </LoginContainer>
+    </LoginBox>
   );
 }
 

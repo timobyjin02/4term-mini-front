@@ -3,8 +3,8 @@ import styled from "@emotion/styled/";
 export const Body = styled.div`
   display: flex;
   justify-content: center;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   padding: 24px 20px 0px;
   background-color: ${({ theme }) => theme.palette.backgroundGrey};
 `;
