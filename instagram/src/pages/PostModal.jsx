@@ -1,8 +1,9 @@
 import { useState } from "react";
 import PostAfterSelect from "../components/Post/PostAfterSelect";
 import PostBeforeSelect from "../components/Post/PostBeforeSelect";
+import { ReactComponent as ExitBtn } from "../assets/exitButton.svg";
 import {
-  ExitBtn,
+  ExitBtnWrap,
   Background,
   Wrap,
   Header,
@@ -12,12 +13,14 @@ import {
 function PostModal({ setShowModal }) {
   const [imgSrc, setImgSrc] = useState("");
   const [selected, setSelected] = useState(false);
-  const close = () => setShowModal(false);
+  const onClose = () => setShowModal(false);
   const stopBubble = (e) => e.stopPropagation();
 
   const Container = ({ children }) => (
-    <Background onClick={close}>
-      <ExitBtn />
+    <Background onClick={onClose}>
+      <ExitBtnWrap>
+        <ExitBtn />
+      </ExitBtnWrap>
       <Wrap onClick={stopBubble}>
         <Header>
           <H1> 새 게시물 만들기</H1>

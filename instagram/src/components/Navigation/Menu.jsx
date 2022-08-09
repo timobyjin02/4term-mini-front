@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ReactComponent as Home } from "../assets/home.svg";
-import { ReactComponent as Post } from "../assets/post.svg";
-import { ReactComponent as Notification } from "../assets/notification.svg";
-import { Wrap, ProfileImage } from "../styles/Navigation/MenuStyle";
-import PostModal from "../pages/PostModal";
+import { ReactComponent as Home } from "../../assets/home.svg";
+import { ReactComponent as Post } from "../../assets/post.svg";
+import { ReactComponent as Notification } from "../../assets/notification.svg";
+import { Wrap, ProfileImage } from "../../styles/Navigation/MenuStyle";
+import PostModal from "../../pages/PostModal";
 
 function Menu() {
   const [showModal, setShowModal] = useState(false);

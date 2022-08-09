@@ -1,11 +1,12 @@
 import styled from "@emotion/styled";
 
-export const ExitBtn = styled.button`
+export const ExitBtnWrap = styled.button`
   position: fixed;
   width: 30px;
   height: 30px;
   right: 0;
   top: 0;
+  background: none;
 `;
 
 export const Background = styled.div`
