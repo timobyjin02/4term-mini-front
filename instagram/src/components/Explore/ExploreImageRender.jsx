@@ -1,4 +1,4 @@
-import { ImageBox, Image } from "../../styles/Explore/Explore_style";
+import { ImageBox, Image } from "../../styles/Explore/ExploreStyle";
 
 // call PaintImages
 function Images({ count }) {
@@ -37,9 +37,5 @@ function PaintImages({ imageCount = 3 }) {
 
   return <ImageBox>{imageRender()}</ImageBox>;
 }
-
-// Images.defaultProps = {
-//   imageCount: 3,
-// };
 
 export default Images;

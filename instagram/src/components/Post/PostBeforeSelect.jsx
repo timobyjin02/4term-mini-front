@@ -1,12 +1,29 @@
-import styled from "@emotion/styled";
 import { ReactComponent as UploadImage } from "../../assets/Upload.svg";
+import {
+  Body,
+  UploadImageWrap,
+  Text,
+  InputFile,
+  InputLabel,
+} from "../../styles/Post/PostBeforeSelect";
 
-function PostBeforeSelect({ setSelected, setShowModal }) {
-  const onChange = () => {
+function PostBeforeSelect({ setImgSrc, setSelected }) {
+  const onChange = (e) => {
+    encodeFileToBase64(e.target.files[0]);
     setSelected(true);
-    setShowModal(false);
   };
 
+  const encodeFileToBase64 = (fileBlob) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(fileBlob);
+
+    return new Promise((resolve) => {
+      reader.onload = () => {
+        setImgSrc(reader.result);
+        resolve();
+      };
+    });
+  };
   return (
     <Body>
       <UploadImageWrap>
@@ -25,43 +42,3 @@ function PostBeforeSelect({ setSelected, setShowModal }) {
 }
 
 export default PostBeforeSelect;
-
-export const Body = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const UploadImageWrap = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 16px;
-`;
-
-export const Text = styled.p`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 24px;
-`;
-
-export const InputLabel = styled.label`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: ${({ theme }) => theme.palette.btn};
-  height: 30px;
-  padding: 5px 9px;
-  border-radius: 4px;
-  color: ${({ theme }) => theme.palette.backgroundWhite};
-  font-size: 1em;
-  cursor: pointer;
-`;
-
-export const InputFile = styled.input`
-  display: none;
-`;

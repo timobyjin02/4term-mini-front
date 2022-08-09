@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Menu from "./Menu";
+import Menu from "../Navigation/Menu";
 import { ReactComponent as SearchIcon } from "../assets/searchIcon.svg";
 import {
   Container,

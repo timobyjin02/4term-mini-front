@@ -1,5 +1,5 @@
-import { Body, Container } from "../styles/Explore/Explore_style";
-import Navigation from "../components/Navigation";
+import { Body, Container } from "../styles/Explore/ExploreStyle";
+import Navigation from "./Navigation";
 import Images from "../components/Explore/ExploreImageRender";
 
 function Explore({ count = 11 }) {

@@ -9,7 +9,6 @@ import PostModal from "../pages/PostModal";
 function Menu() {
   const [showModal, setShowModal] = useState(false);
   const openModal = () => setShowModal(true);
-  console.log(showModal);
   // setShowModal(closed);
   return (
     <Wrap>

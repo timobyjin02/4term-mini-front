@@ -1,28 +1,31 @@
-import styled from "@emotion/styled";
+import { useState } from "react";
+import {
+  Container,
+  SelectedImg,
+  Wrap,
+  UserInfo,
+  UserImage,
+  Content,
+  Input,
+  Nickname,
+} from "../../styles/Post/PostAfterSelectStyle";
 
-function PostAfterSelect() {
-  //   const onChange = () => setSelected(true);
+function PostAfterSelect({ imgSrc }) {
+  const [userId, setUserId] = useState("bang");
   return (
-    <Body>
-      <Text>afterafeteretaet</Text>
-    </Body>
+    <Container>
+      <SelectedImg src={imgSrc} />
+      <Wrap>
+        <UserInfo>
+          <UserImage />
+          <Nickname>{userId}</Nickname>
+        </UserInfo>
+        <Content>
+          <Input placeholder="문구 입력..." />
+        </Content>
+      </Wrap>
+    </Container>
   );
 }
-
-export const Body = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const Text = styled.p`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 24px;
-`;
 
 export default PostAfterSelect;

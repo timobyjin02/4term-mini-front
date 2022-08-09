@@ -7,8 +7,8 @@ export const Wrap = styled.div`
     margin-right: 1.5em;
     width: 24px;
     height: 24px;
+    cursor: pointer;
   }
-  cursor: pointer;
 `;
 
 export const ProfileImage = styled.img`

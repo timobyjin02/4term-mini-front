@@ -3,14 +3,16 @@ import styled from "@emotion/styled";
 import PostAfterSelect from "../components/Post/PostAfterSelect";
 import PostBeforeSelect from "../components/Post/PostBeforeSelect";
 
-function PostModal({ setShowModal, showModal }) {
+function PostModal({ setShowModal }) {
+  const [imgSrc, setImgSrc] = useState("");
   const [selected, setSelected] = useState(false);
-  const onClickClose = () => setShowModal(false);
+  const close = () => setShowModal(false);
+  const stopBubble = (e) => e.stopPropagation();
 
   const Container = ({ children }) => (
-    <Background>
-      <ExitBtn onClick={onClickClose} />
-      <Wrap>
+    <Background onClick={close}>
+      <ExitBtn />
+      <Wrap onClick={stopBubble}>
         <Header>
           <H1> 새 게시물 만들기</H1>
         </Header>
@@ -23,11 +25,11 @@ function PostModal({ setShowModal, showModal }) {
     <>
       {selected ? (
         <Container>
-          <PostAfterSelect />
+          <PostAfterSelect imgSrc={imgSrc} />
         </Container>
       ) : (
-        <Container setShowModal={setShowModal}>
-          <PostBeforeSelect setSelected={setSelected} />
+        <Container>
+          <PostBeforeSelect setImgSrc={setImgSrc} setSelected={setSelected} />
         </Container>
       )}
     </>
@@ -54,15 +56,15 @@ export const Background = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: ${({ theme }) => theme.palette.modalBackground};
-  cursor: default;
+  /* cursor: default; */
 `;
 
 export const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.palette.backgroundWhite};
-  width: 508px;
-  height: 551px;
+  width: fit-content;
+  height: fit-content;
   border-radius: 12px;
 `;
 
