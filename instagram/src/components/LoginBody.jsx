@@ -12,8 +12,8 @@ import KakaoLogin from "./KakaoLogin";
 function LoginBody() {
 
   return (
-      <LoginBox>
-        <LoginContainer>
+    <LoginBox>
+      <LoginContainer>
         <ImgLogo alt="instagram logo" src="img/instagramLogo.png" />
           <Input />
           <Link to="/main">
@@ -22,6 +22,7 @@ function LoginBody() {
           <KakaoLogin />
         </LoginContainer>
       </LoginBox>
+
   );
 }
 
