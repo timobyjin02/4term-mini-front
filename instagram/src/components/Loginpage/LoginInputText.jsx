@@ -1,7 +1,7 @@
-import { InputBox, InputText } from "../styles/input_style";
+import { InputBox, InputText } from "../../styles/Loginpage/LoginInputTextStyle";
 import React from "react";
 
-function Input() {
+function LoginInputText() {
   return (
     <InputBox>
       <InputText placeholder="전화번호, 사용자 이름 또는 이메일" />
@@ -10,4 +10,4 @@ function Input() {
   );
 }
 
-export default Input;
+export default LoginInputText;

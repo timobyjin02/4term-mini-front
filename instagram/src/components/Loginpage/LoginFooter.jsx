@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Footer } from "../styles/LoginFooter_style";
+import { Footer } from "../../styles/Loginpage/LoginFooterStyle";
 
 function LoginFooter() {
   // const handleClick = (e) => {

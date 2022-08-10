@@ -1,13 +1,13 @@
 import React from "react";
-import Input from "./Input";
 import { Link } from "react-router-dom";
 import {
   LoginBox,
   LoginContainer,
   ImgLogo,
   LoginBtn,
-} from "../styles/LoginPage_Style";
+} from "../../styles/Loginpage/LoginPageStyle";
 import KakaoLogin from "./KakaoLogin";
+import LoginInputText from "./LoginInputText";
 
 function LoginBody() {
 
@@ -15,7 +15,7 @@ function LoginBody() {
     <LoginBox>
       <LoginContainer>
         <ImgLogo alt="instagram logo" src="img/instagramLogo.png" />
-          <Input />
+          <LoginInputText />
           <Link to="/main">
             <LoginBtn>로그인</LoginBtn>
           </Link>

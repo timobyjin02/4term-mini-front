@@ -5,10 +5,10 @@ import {
   Text,
   InputText,
   LoginBtn,
-} from "../styles/Join_style";
+} from "../../styles/Loginpage/SignUpStyle";
 import React from "react";
 
-function Join() {
+function SignUp() {
   function handleSubmit(e) {
     e.preventDefault();
     console.log("click");
@@ -30,4 +30,4 @@ function Join() {
   );
 }
 
-export default Join;
+export default SignUp;
