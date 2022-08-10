@@ -1,7 +1,7 @@
 import {
   PictureBox,
   ProfilePicture,
-} from "../../styles/UserPage/ProfilePic_style";
+} from "../../styles/UserPage/ProfilePicStyle";
 
 function ProfilePic() {
   return (

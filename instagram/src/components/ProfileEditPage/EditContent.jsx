@@ -1,6 +1,6 @@
 import EditProfilePic from "./EditProfilePic";
 import DetailsForm from "./DetailsForm";
-import { Content } from "../../styles/ProfileEditPage/EditContent_style";
+import { Content } from "../../styles/ProfileEditPage/EditContentStyle";
 
 function EditContent() {
   return (

@@ -3,7 +3,7 @@ import IdEditGear from "./IdEditGear";
 import {
   HeaderContainer,
   UserName,
-} from "../../styles/UserPage/HeaderSection_style";
+} from "../../styles/UserPage/HeaderSectionStyle";
 
 function HeaderSection() {
   return (

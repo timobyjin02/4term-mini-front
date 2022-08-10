@@ -1,7 +1,7 @@
 import {
   EditMenu,
   MenuList,
-} from "../../styles/ProfileEditPage/EditMenus_style";
+} from "../../styles/ProfileEditPage/EditMenusStyle";
 
 function EditMenus() {
   return (
