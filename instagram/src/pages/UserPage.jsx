@@ -1,4 +1,4 @@
-import Navigation from "../components/Navigation";
+import Navigation from "./Navigation";
 import UserHeader from "../components/UserPage/UserHeader";
 import UserPostings from "../components/UserPage/UserPostings";
 import HeaderBaseline from "../components/UserPage/HeaderBaseline";
