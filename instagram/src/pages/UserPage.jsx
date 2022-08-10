@@ -1,8 +1,8 @@
 import Navigation from "./Navigation";
-import UserHeader from "../components/UserHeader";
-import styled from "@emotion/styled";
-import PostingBox from "../components/PostingBox";
-import HeaderBaseline from "../components/HeaderBaseline";
+import UserHeader from "../components/UserPage/UserHeader";
+import UserPostings from "../components/UserPage/UserPostings";
+import HeaderBaseline from "../components/UserPage/HeaderBaseline";
+import { Container } from "../styles//UserPage/UserPageStyle";
 
 function UserPage() {
   return (
@@ -11,20 +11,10 @@ function UserPage() {
       <Container>
         <UserHeader />
         <HeaderBaseline />
-        <PostingBox />
+        <UserPostings />
       </Container>
     </>
   );
 }
 
 export default UserPage;
-
-const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #fafafa;
-`;

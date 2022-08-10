@@ -6,7 +6,7 @@ import {
   LoginContainer,
   ImgLogo,
   LoginBtn,
-} from "../styles/LoginPage_style";
+} from "../styles/LoginPage_Style";
 
 function LoginBody() {
   // function handleSubmit(e) {

@@ -1,4 +1,3 @@
-import React from "react";
 import { CardMenu, Interactions } from "../styles/CommentMenu_style";
 import { ReactComponent as Likes } from "../assets/likes.svg";
 import { ReactComponent as Comments } from "../assets/comments.svg";
