@@ -6,9 +6,21 @@ import {
 } from "../../styles/UserPage/UserPostings_style";
 
 function UserPostings() {
+  const paths = [
+    { id: 1, linkTo: "/comments" },
+    { id: 2, linkTo: "/comments" },
+    { id: 3, linkTo: "/comments" },
+  ];
   return (
     <PostingBox>
-      <Posts>
+      {paths.map((item) => (
+        <Posts key={item.id}>
+          <Link to={item.linkTo}>
+            <PostImg />
+          </Link>
+        </Posts>
+      ))}
+      {/* <Posts>
         <Link to="/comments">
           <PostImg />
         </Link>
@@ -22,7 +34,7 @@ function UserPostings() {
         <Link to="comments">
           <PostImg />
         </Link>
-      </Posts>
+      </Posts> */}
     </PostingBox>
   );
 }

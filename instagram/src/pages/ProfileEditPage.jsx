@@ -1,5 +1,5 @@
 import React from "react";
-import Navigation from "../components/Navigation";
+import Navigation from "./Navigation";
 import EditMenus from "../components/ProfileEditPage/EditMenus";
 import EditContent from "../components/ProfileEditPage/EditContent";
 import {

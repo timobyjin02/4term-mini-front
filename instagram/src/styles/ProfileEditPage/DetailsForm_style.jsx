@@ -6,7 +6,7 @@ export const ItemForm = styled.form`
   margin: 16px 0;
 `;
 
-export const SubmitBtn = styled.div`
+export const SubmitBtn = styled.button`
   width: 48px;
   height: 30px;
   margin-left: 194px;

@@ -14,15 +14,15 @@ function LoginBody() {
   //   console.log("click");
   // }
   return (
-      <LoginBox>
-        <LoginContainer>
+    <LoginBox>
+      <LoginContainer>
         <ImgLogo alt="instagram logo" src="img/instagramLogo.png" />
-          <Input />
-          <Link to="/main">
-            <LoginBtn>로그인</LoginBtn>
-          </Link>
-        </LoginContainer>
-      </LoginBox>
+        <Input />
+        <Link to="/main">
+          <LoginBtn>로그인</LoginBtn>
+        </Link>
+      </LoginContainer>
+    </LoginBox>
   );
 }
 
