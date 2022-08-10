@@ -1,26 +1,26 @@
 import React from "react";
 import {
-  ItemBox,
-  ItemName,
-  Item,
-  InputBox,
-  ItemInput,
+  ProfileEditItemBox,
+  ProfileEditItemName,
+  ProfileEditItem,
+  ProfileEditInputBox,
+  ProfileEditItemInput,
 } from "../../styles/ProfileEditPage/ItemDetail_style";
 
 function ItemDetail({ itemName }) {
   return (
-    <ItemBox>
-      <ItemName>
-        <Item htmlFor={itemName}>{itemName}</Item>
-      </ItemName>
-      <InputBox>
-        <ItemInput
+    <ProfileEditItemBox>
+      <ProfileEditItemName>
+        <ProfileEditItem htmlFor={itemName}>{itemName}</ProfileEditItem>
+      </ProfileEditItemName>
+      <ProfileEditInputBox>
+        <ProfileEditItemInput
           maxLength={itemName === "소개" ? 55 : 15}
           id={itemName}
           className={itemName === "소개" ? "higher" : "default"}
-        ></ItemInput>
-      </InputBox>
-    </ItemBox>
+        ></ProfileEditItemInput>
+      </ProfileEditInputBox>
+    </ProfileEditItemBox>
   );
 }
 

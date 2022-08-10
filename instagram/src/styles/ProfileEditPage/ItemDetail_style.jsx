@@ -1,21 +1,21 @@
 import styled from "@emotion/styled";
 
-export const ItemBox = styled.div`
+export const ProfileEditItemBox = styled.div`
   display: flex;
   margin-bottom: 20px;
 `;
 
-export const InputBox = styled.div`
+export const ProfileEditInputBox = styled.div`
   width: 355px;
 `;
 
-export const ItemName = styled.aside`
+export const ProfileEditItemName = styled.aside`
   width: 194px;
   display: flex;
   justify-content: center;
 `;
 
-export const Item = styled.label`
+export const ProfileEditItem = styled.label`
   width: 130px;
   font-size: 16px;
   font-weight: 600;
@@ -23,7 +23,7 @@ export const Item = styled.label`
   justify-content: flex-end;
 `;
 
-export const ItemInput = styled.textarea`
+export const ProfileEditItemInput = styled.textarea`
   width: 100%;
   border: 1px solid ${({ theme }) => theme.palette.borderGrey};
   border-radius: 3px;

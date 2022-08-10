@@ -13,7 +13,7 @@ import {
   CommentsPost,
   CommentsAllView,
   CommentsText,
-} from "../styles/MainBoard_style";
+} from "../styles/MainBoard_Style";
 
 function MainBoard() {
   return (
