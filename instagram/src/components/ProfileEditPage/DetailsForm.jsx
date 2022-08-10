@@ -1,7 +1,7 @@
 import {
   ItemForm,
   SubmitBtn,
-} from "../../styles/ProfileEditPage/DetailsForm_style";
+} from "../../styles/ProfileEditPage/DetailsFormStyle";
 import ItemDetail from "./ItemDetail";
 
 function DetailsForm() {

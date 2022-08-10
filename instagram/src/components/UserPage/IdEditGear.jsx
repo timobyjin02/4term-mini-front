@@ -7,7 +7,7 @@ import {
   GearBtn,
   EditBtnBox,
   EditBtn,
-} from "../../styles/UserPage/IdEditGear_style";
+} from "../../styles/UserPage/IdEditGearStyle";
 
 function IdEditGear() {
   return (

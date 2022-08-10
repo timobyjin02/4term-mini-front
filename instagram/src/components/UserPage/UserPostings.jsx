@@ -3,7 +3,7 @@ import {
   PostingBox,
   Posts,
   PostImg,
-} from "../../styles/UserPage/UserPostings_style";
+} from "../../styles/UserPage/UserPostingsStyle";
 
 function UserPostings() {
   const paths = [

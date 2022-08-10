@@ -4,7 +4,7 @@ import {
   UserIdEditPic,
   Nickname,
   PicEditBtn,
-} from "../../styles/ProfileEditPage/EditProfilePic_style";
+} from "../../styles/ProfileEditPage/EditProfilePicStyle";
 
 function EditProfilePic() {
   return (
