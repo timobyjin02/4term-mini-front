@@ -2,7 +2,7 @@ import {
   ListBox,
   List,
   ListNumber,
-} from "../../styles/UserPage/PostsFollows_style";
+} from "../../styles/UserPage/PostsFollowsStyle";
 
 function PostsFollows() {
   return (

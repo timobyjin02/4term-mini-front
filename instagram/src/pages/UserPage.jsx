@@ -2,7 +2,7 @@ import Navigation from "./Navigation";
 import UserHeader from "../components/UserPage/UserHeader";
 import UserPostings from "../components/UserPage/UserPostings";
 import HeaderBaseline from "../components/UserPage/HeaderBaseline";
-import { Container } from "../styles//UserPage/UserPage_style";
+import { Container } from "../styles//UserPage/UserPageStyle";
 
 function UserPage() {
   return (

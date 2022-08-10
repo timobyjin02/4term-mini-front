@@ -5,7 +5,7 @@ import {
   ProfileEditItem,
   ProfileEditInputBox,
   ProfileEditItemInput,
-} from "../../styles/ProfileEditPage/ItemDetail_style";
+} from "../../styles/ProfileEditPage/ItemDetailStyle";
 
 function ItemDetail({ itemName }) {
   return (

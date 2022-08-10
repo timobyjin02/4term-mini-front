@@ -4,7 +4,7 @@ import {
   DividingLine,
   PostDiv,
   SpanPost,
-} from "../../styles/UserPage/HeaderBaseline_style";
+} from "../../styles/UserPage/HeaderBaselineStyle";
 
 function HeaderBaseline() {
   return (

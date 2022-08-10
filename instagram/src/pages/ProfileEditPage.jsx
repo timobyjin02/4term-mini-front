@@ -5,7 +5,7 @@ import EditContent from "../components/ProfileEditPage/EditContent";
 import {
   Container,
   MainContainer,
-} from "../styles/ProfileEditPage/ProfileEditPage_style";
+} from "../styles/ProfileEditPage/ProfileEditPageStyle";
 
 function ProfileEditPage() {
   return (
