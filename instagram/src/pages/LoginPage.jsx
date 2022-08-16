@@ -1,5 +1,5 @@
 import React from "react";
-import { Login } from "../styles/LoginPage_Style";
+import { Login } from "../styles/LoginPage_style";
 import LoginBody from "../components/LoginBody";
 import LoginFooter from "../components/LoginFooter";
 

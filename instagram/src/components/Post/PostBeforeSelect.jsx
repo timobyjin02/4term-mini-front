@@ -8,22 +8,30 @@ import {
 } from "../../styles/Post/PostBeforeSelect";
 
 function PostBeforeSelect({ setImgSrc, setSelected }) {
+  // const onChange = (e) => {
+  //   encodeFileToBase64(e.target.files[0]);
+  //   setSelected(true);
+  // };
+
   const onChange = (e) => {
-    encodeFileToBase64(e.target.files[0]);
-    setSelected(true);
+    let userImages = URL.createObjectURL(e.target.files[0]);
+    userImages.onload = () => {
+      setImgSrc(userImages);
+      setSelected(true);
+    };
   };
 
-  const encodeFileToBase64 = (fileBlob) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(fileBlob);
+  // const encodeFileToBase64 = (fileBlob) => {
+  //   const reader = new FileReader();
+  //   reader.readAsDataURL(fileBlob);
 
-    return new Promise((resolve) => {
-      reader.onload = () => {
-        setImgSrc(reader.result);
-        resolve();
-      };
-    });
-  };
+  //   return new Promise((resolve) => {
+  //     reader.onload = () => {
+  //       setImgSrc(reader.result);
+  //       resolve();
+  //     };
+  //   });
+  // };
   return (
     <Body>
       <UploadImageWrap>
