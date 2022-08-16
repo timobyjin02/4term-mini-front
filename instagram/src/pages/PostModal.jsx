@@ -29,6 +29,7 @@ function PostModal({ setShowModal }) {
       </Wrap>
     </Background>
   );
+  console.log(imgSrc);
 
   return (
     <>

@@ -15,10 +15,10 @@ function PostBeforeSelect({ setImgSrc, setSelected }) {
 
   const onChange = (e) => {
     let userImages = URL.createObjectURL(e.target.files[0]);
-    userImages.onload = () => {
+    if (userImages) {
       setImgSrc(userImages);
       setSelected(true);
-    };
+    }
   };
 
   // const encodeFileToBase64 = (fileBlob) => {
