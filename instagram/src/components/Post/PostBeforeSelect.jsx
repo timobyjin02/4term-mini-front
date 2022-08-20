@@ -7,14 +7,18 @@ import {
   InputLabel,
 } from "../../styles/Post/PostBeforeSelect";
 
-function PostBeforeSelect({ setImgSrc, setSelected }) {
+function PostBeforeSelect({ setImgSrc, imgSrc, setSelected }) {
   // const onChange = (e) => {
   //   encodeFileToBase64(e.target.files[0]);
   //   setSelected(true);
   // };
-
   const onChange = (e) => {
+    console.log(e.target.files[0]);
+    setImgSrc(e.target.files[0]);
+
     let userImages = URL.createObjectURL(e.target.files[0]);
+    // let userImages = URL.createObjectURL(e.target.files[0]);
+
     if (userImages) {
       setImgSrc(userImages);
       setSelected(true);
