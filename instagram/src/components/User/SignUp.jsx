@@ -5,9 +5,9 @@ import {
   LoginContainer,
   ImgLogo,
   Text,
-  InputText,
   FormContainer,
 } from "../../styles/User/SignUpStyle";
+import LoginInputText from "./Input";
 import { LoginBtn } from "./Button";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
@@ -58,10 +58,10 @@ function SignUp() {
           <ImgLogo alt="instagram logo" src="img/instagramLogo.png" />
           <Text>친구들의 사진과 동영상을 보려면 가입하세요.</Text>
           <FormContainer>
-            <InputText type={'email'} name="account_email" placeholder={'휴대폰 번호 또는 이메일 주소'} onChange={onChange} />
-            <InputText type={'text'} name="nickname" placeholder={'성명'} onChange={onChange}/>
-            <InputText type={'text'} name="name" placeholder={'사용자 이름'}  onChange={onChange}/>
-            <InputText type={'password'} placeholder={'비밀번호'} />
+            <LoginInputText type='email' name="account_email" placeholder='휴대폰 번호 또는 이메일 주소' onChange={onChange} />
+            <LoginInputText name="nickname" placeholder='성명' onChange={onChange}/>
+            <LoginInputText name="name" placeholder='사용자 이름'  onChange={onChange}/>
+            <LoginInputText type={'password'} placeholder='비밀번호' />
             <LoginBtn onClick={onSubmit} type="submit">가입</LoginBtn>
           </FormContainer>
         </LoginContainer>
