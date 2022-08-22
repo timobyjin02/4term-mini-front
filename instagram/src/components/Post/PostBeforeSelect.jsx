@@ -7,22 +7,16 @@ import {
   InputLabel,
 } from "../../styles/Post/PostBeforeSelect";
 
-function PostBeforeSelect({ setImgSrc, imgSrc, setSelected }) {
+function PostBeforeSelect({ setImgSrc, setSelected }) {
   // const onChange = (e) => {
   //   encodeFileToBase64(e.target.files[0]);
   //   setSelected(true);
   // };
   const onChange = (e) => {
-    console.log(e.target.files[0]);
-    setImgSrc(e.target.files[0]);
-
     let userImages = URL.createObjectURL(e.target.files[0]);
-    // let userImages = URL.createObjectURL(e.target.files[0]);
 
-    if (userImages) {
-      setImgSrc(userImages);
-      setSelected(true);
-    }
+    setImgSrc({ files: e.target.files, URLForShow: userImages });
+    setSelected(true);
   };
 
   // const encodeFileToBase64 = (fileBlob) => {
@@ -47,6 +41,7 @@ function PostBeforeSelect({ setImgSrc, imgSrc, setSelected }) {
         id="input-file"
         type="file"
         accept="image/png, image/jpg, image/jpeg,"
+        multiple
         onChange={onChange}
       />
     </Body>
