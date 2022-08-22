@@ -5,7 +5,6 @@ import {
   LoginContainer,
   ImgLogo,
   Text,
-  FormContainer,
 } from "../../styles/User/SignUpStyle";
 import LoginInputText from "./Input";
 import { LoginBtn } from "./Button";
@@ -14,15 +13,38 @@ import { useNavigate } from 'react-router-dom';
 
 function SignUp() {
   const navigate = useNavigate();
+  const [userInputValue, setUserInputValue] = useState({
+    email: '',
+    name: '',
+    nickname: '',
+  })
 
-  const [data, setData] = useState({
+  // console.log(userInputValue);
 
-  });
+  const [data, setData] = useState({});
   
   const onSubmit =(e) => {
     e.preventDefault();
-    console.log(data)
-    const {nickname, account_email, name} = data
+    const {account_email,name, nickname } = data
+
+    // console.log(data);
+    console.log(e.target.account_email);
+    if (!e.target.account_email.value) {
+      alert("이메일을 입력하세요")
+      e.target.account_email.focus()
+      return
+    }
+    if (!e.target.nickname.value) {
+      alert("사용자 이름을 입력하세요")
+      e.target.nickname.focus()
+      return
+    }
+    if (!e.target.name.value) {
+      alert("이름을 입력하세요")
+      e.target.name.focus()
+      return
+    }
+
     handleSignup(account_email, {nickname}, name)
   }
 
@@ -34,6 +56,10 @@ function SignUp() {
     })
   }
 
+  const inputHandleOnChange = (e,key) => {
+    setUserInputValue({...userInputValue, [key]:e.target.value})
+  }
+
   const handleSignup = async(account_email, profile, name) => {
     try {
       const {data} = await axios.post('http://15.164.232.205:8080/moae/user/profile/:userNo', { 
@@ -41,29 +67,25 @@ function SignUp() {
         account_email,
         name,
       }).then(res => {
-        console.log('전송 완료')
         console.log(res);
         })
-          console.log(data);
     } catch (err) {
-        console.log(err)
+      console.log(err)
     }
-      navigate('/main', {});
+      // navigate('/main', {});
     }
-    console.log("click");
 
   return (
       <LoginBox>
         <LoginContainer>
           <ImgLogo alt="instagram logo" src="img/instagramLogo.png" />
           <Text>친구들의 사진과 동영상을 보려면 가입하세요.</Text>
-          <FormContainer>
-            <LoginInputText type='email' name="account_email" placeholder='휴대폰 번호 또는 이메일 주소' onChange={onChange} />
-            <LoginInputText name="nickname" placeholder='성명' onChange={onChange}/>
-            <LoginInputText name="name" placeholder='사용자 이름'  onChange={onChange}/>
-            <LoginInputText type={'password'} placeholder='비밀번호' />
-            <LoginBtn onClick={onSubmit} type="submit">가입</LoginBtn>
-          </FormContainer>
+          <form onSubmit={e => onSubmit(e)}>
+              <LoginInputText value={userInputValue.email} type='email' name="account_email" placeholder='휴대폰 번호 또는 이메일 주소' onChange={e => inputHandleOnChange(e, 'email')} />
+              <LoginInputText value={userInputValue.nickname} name="nickname" placeholder='성명' onChange={e => inputHandleOnChange(e, 'nickname')}/>
+              <LoginInputText value={userInputValue.name} name="name" placeholder='사용자 이름'  onChange={e => inputHandleOnChange(e, 'name')}/>
+              <LoginBtn type="submit">가입</LoginBtn>
+          </form>
         </LoginContainer>
       </LoginBox>
   );

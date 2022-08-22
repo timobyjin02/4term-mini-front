@@ -53,6 +53,7 @@ export const InputText = styled.input`
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;
+  display: flex;
 `;
 
 export const LoginBtn = styled.button`
