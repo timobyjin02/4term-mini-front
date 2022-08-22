@@ -15,7 +15,6 @@ export const LoginBox = styled.div`
 `;
 
 export const LoginContainer = styled.div`
-  position: relative;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -24,21 +23,6 @@ export const LoginContainer = styled.div`
 `;
 
 export const ImgLogo = styled.img`
-  position: absolute;
-  top: 47px;
+  margin-bottom: 10px;
   width: 175px;
-`;
-
-export const LoginBtn = styled.button`
-  width: 268px;
-  height: 30px;
-  margin-top: 6px;
-  padding: 0;
-  background-color: ${({ theme }) => theme.palette.btn};
-  color: ${({ theme }) => theme.palette.backgroundWhite};
-  border: none;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
 `;

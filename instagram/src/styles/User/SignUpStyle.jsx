@@ -34,7 +34,7 @@ export const Text = styled.div`
   height: 58px;
   margin-top: 100px;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 13px;
   color: #dadada;
   display: flex;
   justify-content: center;
@@ -68,3 +68,9 @@ export const LoginBtn = styled.button`
   font-weight: 700;
   cursor: pointer;
 `;
+export const FormContainer = styled.form`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`

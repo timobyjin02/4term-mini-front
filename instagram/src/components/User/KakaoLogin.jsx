@@ -1,7 +1,10 @@
 import axios from 'axios';
 import styled from "@emotion/styled";
+import { useNavigate } from 'react-router-dom';
 
 function KakaoLogin() {
+    const navigate = useNavigate();
+
     const jsKey = "c45d6f34c0b90c11bf04e0fd4e4ce43c";
     window.Kakao.init(jsKey);
 
@@ -23,6 +26,9 @@ function KakaoLogin() {
           localStorage.setItem('jwtToken', token); // 로컬스토리지에 저장
           setAuthorizationToken(token);
           console.log(res);
+          // 수정 봐야함 (토큰 형태 확인 필수 !!!)
+          // const userNo = res.data.token;
+          // localStorage.setItem('jwtToken', token);
         })
         console.log(data);
          // data에는 token 값이 포함되어 있어야 한다
@@ -47,8 +53,10 @@ function KakaoLogin() {
                 },
               });
             },
-          });
-        }
+        });
+        navigate('/signup', {
+        });
+     }
 
     return (
          <ImgBtn src="img/kakaoBtn.png" onClick={handleLogin} alt="kakaoBtn" />

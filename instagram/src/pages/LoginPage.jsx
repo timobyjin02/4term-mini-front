@@ -1,7 +1,7 @@
 import React from "react";
-import { Login } from "../styles/Loginpage/LoginPageStyle";
-import LoginBody from "../components/Loginpage/LoginBody";
-import LoginFooter from "../components/Loginpage/LoginFooter";
+import { Login } from "../styles/User/LoginPageStyle";
+import LoginBody from "../components/User/LoginBody";
+import LoginFooter from "../components/User/LoginFooter";
 
 function LoginPage() {
   return (
