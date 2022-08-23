@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ProfileEditItemBox,
   ProfileEditItemName,
@@ -6,8 +6,13 @@ import {
   ProfileEditInputBox,
   ProfileEditItemInput,
 } from "../../styles/ProfileEditPage/ItemDetailStyle";
-
-function ItemDetail({ itemName }) {
+function ItemDetail({ itemName, keyName, userData, setUserData }) {
+  const onChange = (event) => {
+    setUserData({
+      ...userData,
+      [keyName]: event.target.value,
+    });
+  };
   return (
     <ProfileEditItemBox>
       <ProfileEditItemName>
@@ -15,6 +20,7 @@ function ItemDetail({ itemName }) {
       </ProfileEditItemName>
       <ProfileEditInputBox>
         <ProfileEditItemInput
+          onChange={onChange}
           maxLength={itemName === "소개" ? 55 : 15}
           id={itemName}
           className={itemName === "소개" ? "higher" : "default"}

@@ -3,18 +3,58 @@ import {
   SubmitBtn,
 } from "../../styles/ProfileEditPage/DetailsFormStyle";
 import ItemDetail from "./ItemDetail";
+import { useState } from "react";
 
-function DetailsForm() {
+function DetailsForm({ userData, setUserData }) {
+  const onSubmit = (event) => {
+    event.preventDefault();
+    console.log(userData);
+  };
   return (
     <ItemForm>
-      <ItemDetail itemName={"이름"} />
-      <ItemDetail itemName={"사용자 이름"} />
-      <ItemDetail itemName={"웹 사이트"} />
-      <ItemDetail itemName={"소개"} />
-      <ItemDetail itemName={"이메일"} />
-      <ItemDetail itemName={"전화번호"} />
-      <ItemDetail itemName={"성별"} />
-      <SubmitBtn>제출</SubmitBtn>
+      <ItemDetail
+        userData={userData}
+        setUserData={setUserData}
+        keyName="name"
+        itemName="이름"
+      />
+      <ItemDetail
+        userData={userData}
+        setUserData={setUserData}
+        keyName="nickname"
+        itemName="사용자 이름"
+      />
+      <ItemDetail
+        userData={userData}
+        setUserData={setUserData}
+        keyName="website"
+        itemName="웹 사이트"
+      />
+      <ItemDetail
+        userData={userData}
+        setUserData={setUserData}
+        keyName="description"
+        itemName="소개"
+      />
+      <ItemDetail
+        userData={userData}
+        setUserData={setUserData}
+        keyName="email"
+        itemName="이메일"
+      />
+      <ItemDetail
+        userData={userData}
+        setUserData={setUserData}
+        keyName="phone"
+        itemName="전화번호"
+      />
+      <ItemDetail
+        userData={userData}
+        setUserData={setUserData}
+        keyName="gender"
+        itemName="성별"
+      />
+      <SubmitBtn onClick={onSubmit}>제출</SubmitBtn>
     </ItemForm>
   );
 }
