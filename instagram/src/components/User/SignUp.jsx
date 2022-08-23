@@ -19,8 +19,6 @@ function SignUp() {
     nickname: '',
   })
 
-  // console.log(userInputValue);
-
   const [data, setData] = useState({});
   
   const onSubmit =(e) => {
@@ -66,13 +64,13 @@ function SignUp() {
         profile_nickname: profile.nickname,
         account_email,
         name,
-      }).then(res => {
-        console.log(res);
-        })
+      })
+        console.log(data);
+        alert('회원가입이 완료되었습니다')
+        navigate('/main', {})
     } catch (err) {
       console.log(err)
     }
-      // navigate('/main', {});
     }
 
   return (

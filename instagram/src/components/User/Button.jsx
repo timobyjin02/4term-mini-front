@@ -1,7 +1,7 @@
 import React, { children } from 'react';
 import styled from '@emotion/styled';
 
-function Button({chikdren, ...props}) {
+function Button({children, ...props}) {
   return (
     <LoginBtn {...props}>{children}</LoginBtn>
   )
@@ -21,4 +21,7 @@ export const LoginBtn = styled.button`
   font-size: 12px;
   font-weight: 700;
   cursor: pointer;
+  &:disabled {
+    color: #cecece;
+  }
 `;

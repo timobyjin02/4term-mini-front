@@ -12,6 +12,7 @@ import SignUp from "./pages/SignUp";
 import MainPage from "./pages/MainPage";
 import Explore from "./pages/Explore";
 import UserPage from "./pages/UserPage";
+import { setHeader } from "./api/config";
 
 function App() {
   const location = useLocation();
@@ -19,7 +20,6 @@ function App() {
 
   useEffect(function () {
     const token = localStorage.getItem("jwtToken");
-    console.log(location);
     const isCurrentRootPath = location.pathname === "/";
 
     if (!token) {
@@ -28,13 +28,13 @@ function App() {
       }
     } else {
       if (isCurrentRootPath) {
+        setHeader(token); // token이 있을 때, axios 사용할 때마다 자동으로 헤더에 Authorization 적용될 수 있도록
         navigate("/main");
       }
     }
   }, []);
 
   return (
-    // <Router>
     <Routes>
       <Route path="/" element={<LoginPage />}></Route>
       <Route path="/signup" element={<SignUp />}></Route>
@@ -42,7 +42,6 @@ function App() {
       <Route path="/main" element={<MainPage />}></Route>
       <Route path="/username" element={<UserPage />}></Route>
     </Routes>
-    // </Router>
   );
 }
 
