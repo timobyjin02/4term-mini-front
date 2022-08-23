@@ -25,8 +25,6 @@ function SignUp() {
     e.preventDefault();
     const {account_email,name, nickname } = data
 
-    // console.log(data);
-    console.log(e.target.account_email);
     if (!e.target.account_email.value) {
       alert("이메일을 입력하세요")
       e.target.account_email.focus()
@@ -60,16 +58,17 @@ function SignUp() {
 
   const handleSignup = async(account_email, profile, name) => {
     try {
-      const {data} = await axios.post('http://15.164.232.205:8080/moae/user/profile/:userNo', { 
+      const {data} = await axios.post('/user/profile/:userNo', { 
         profile_nickname: profile.nickname,
         account_email,
         name,
       })
         console.log(data);
-        alert('회원가입이 완료되었습니다')
-        navigate('/main', {})
+        alert('회원가입이 완료되었습니다');
+        navigate('/main');
     } catch (err) {
       console.log(err)
+      alert('회원가입 실패');
     }
     }
 

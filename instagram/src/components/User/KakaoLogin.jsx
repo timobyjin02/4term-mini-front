@@ -37,8 +37,7 @@ function KakaoLogin() {
             },
         });
         alert('카카오 로그인이 완료되었습니다');
-        navigate('/signup', {
-        });
+        navigate('/signup');
      }
 
     return (
