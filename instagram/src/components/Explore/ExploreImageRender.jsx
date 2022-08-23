@@ -13,7 +13,6 @@ function Images({ count }) {
           <PaintImages />
         </span>
       );
-      return boxArr;
     }
     boxArr.push(<PaintImages imageCount={remainder} key={"last Box"} />);
     return boxArr;
