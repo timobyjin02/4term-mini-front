@@ -16,6 +16,7 @@ export const UserPic = styled.img`
 `;
 
 export const UserIdEditPic = styled.div`
+  padding-bottom: 1px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,6 +35,12 @@ export const PicEditBtn = styled.label`
   &:hover {
     cursor: pointer;
   }
+`;
+
+export const PicEditModalBtn = styled.button`
+  color: ${({ theme }) => theme.palette.btn};
+  font-size: 14px;
+  font-weight: 700;
 `;
 
 export const InputPicFile = styled.input`

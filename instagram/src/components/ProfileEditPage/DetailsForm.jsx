@@ -3,13 +3,8 @@ import {
   SubmitBtn,
 } from "../../styles/ProfileEditPage/DetailsFormStyle";
 import ItemDetail from "./ItemDetail";
-import { useState } from "react";
 
-function DetailsForm({ userData, setUserData }) {
-  const onSubmit = (event) => {
-    event.preventDefault();
-    console.log(userData);
-  };
+function DetailsForm({ userData, setUserData, onSubmit }) {
   return (
     <ItemForm>
       <ItemDetail

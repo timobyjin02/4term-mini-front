@@ -6,28 +6,56 @@ import {
   Nickname,
   PicEditBtn,
   InputPicFile,
+  PicEditModalBtn,
 } from "../../styles/ProfileEditPage/EditProfilePicStyle";
+import EditPicModal from "./EditPicModal";
 
 function EditProfilePic({ userData, setUserData }) {
   const [img, setImg] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+
   const onUploadPic = (event) => {
-    event.preventDefault();
     setUserData({ ...userData, profile_image: event.target.files[0] });
     setImg(URL.createObjectURL(event.target.files[0]));
+    setShowModal(false);
   };
+
+  const openModal = () => setShowModal(true);
+
+  const deletePic = () => {
+    setUserData({ ...userData, profile_image: null });
+    setImg(null);
+    setShowModal(false);
+  };
+
   return (
     <PictureId>
-      <UserPic src={img} onError={'this.style.display = "none"'} />
+      <UserPic src={img ? img : "img/defaultProfile.jpg"} />
       <UserIdEditPic>
         <Nickname>modernAgile_4기</Nickname>
-        <PicEditBtn>
-          프로필 사진 바꾸기
-          <InputPicFile
-            onChange={onUploadPic}
-            type={"file"}
-            accept={"image/*"}
+        {img ? (
+          <PicEditModalBtn onClick={openModal}>
+            프로필 사진 바꾸기
+          </PicEditModalBtn>
+        ) : (
+          <PicEditBtn>
+            프로필 사진 바꾸기
+            <InputPicFile
+              onChange={onUploadPic}
+              type={"file"}
+              accept={"image/*"}
+            />
+          </PicEditBtn>
+        )}
+        {showModal ? (
+          <EditPicModal
+            setUserData={setUserData}
+            setImg={setImg}
+            setShowModal={setShowModal}
+            onUploadPic={onUploadPic}
+            deletePic={deletePic}
           />
-        </PicEditBtn>
+        ) : null}
       </UserIdEditPic>
     </PictureId>
   );
