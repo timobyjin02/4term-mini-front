@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 function Explore() {
-  const url = "http://15.164.232.205:8080/moae/post/all/";
+  const url = `${process.env.REACT_APP_URL}post/all`;
   const [allPostInfo, setAllPostInfo] = useState([]);
   useEffect(() => {
     async function getAllPostInfo() {
