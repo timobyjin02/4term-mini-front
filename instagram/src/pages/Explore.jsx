@@ -3,24 +3,34 @@ import { Body, Container } from "../styles/Explore/ExploreStyle";
 import Navigation from "./Navigation";
 import Images from "../components/Explore/ExploreImageRender";
 import { useEffect } from "react";
+import { useState } from "react";
 
-function Explore({ count = 11 }) {
+function Explore() {
   const url = "http://15.164.232.205:8080/moae/post/all/";
-
-  // useEffect(() => {
-  //   axios
-  //     .get(url)
-  //     .then((res) => console.dir(res))
-  //     .catch((err) => console.log(err));
-  // });
+  const [allPostInfo, setAllPostInfo] = useState([]);
+  useEffect(() => {
+    async function getAllPostInfo() {
+      try {
+        const res = await axios.get(url);
+        setAllPostInfo(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    getAllPostInfo();
+  }, []);
   return (
     <>
-      <Navigation />
-      <Body>
-        <Container>
-          <Images count={count} />
-        </Container>
-      </Body>
+      {allPostInfo.length ? (
+        <>
+          <Navigation />
+          <Body>
+            <Container>
+              <Images allPostInfo={allPostInfo} />
+            </Container>
+          </Body>
+        </>
+      ) : null}
     </>
   );
 }

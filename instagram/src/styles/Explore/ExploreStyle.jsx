@@ -21,13 +21,13 @@ export const ImageBox = styled.div`
   display: flex;
 `;
 
-export const Image = styled.div(
+export const Image = styled.img(
   ({ theme }) =>
     `
     width: ${theme.sizes.explorePhotoBox};
     height: ${theme.sizes.explorePhotoBox};
-    background-color: ${theme.palette.fontGrey};
     margin-right: 28px;
     margin-bottom: 28px;
+    object-fit:cover;
   `
 );
