@@ -1,4 +1,9 @@
-import { ImageBox, Image } from "../../styles/Explore/ExploreStyle";
+import {
+  ImageBox,
+  Image,
+  ImageHover,
+  ImageWrap,
+} from "../../styles/Explore/ExploreStyle";
 
 // call PaintImages
 function Images({ allPostInfo }) {
@@ -31,9 +36,10 @@ function Images({ allPostInfo }) {
       const imageArr = [];
       for (let i = 0; i < imageCount; i++) {
         imageArr.push(
-          <span key={postCounter}>
-            <Image src={allPostInfo[postCounter].images[0]}></Image>
-          </span>
+          <ImageWrap key={postCounter}>
+            <Image src={allPostInfo[postCounter].images[0]} i={i}></Image>
+            <ImageHover className="imgHover" />
+          </ImageWrap>
         );
         postCounter--;
       }
