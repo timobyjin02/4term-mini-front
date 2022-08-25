@@ -1,4 +1,4 @@
-import Navigation from "../components/Navigation";
+import Navigation from "./Navigation";
 import MainBoard from "../components/MainBoard";
 
 function MainPage() {

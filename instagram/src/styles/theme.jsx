@@ -4,9 +4,10 @@ const palette = {
   fontBlack: "#262626",
   fontGrey: "#8E8E8E",
   borderGrey: "#DBDBDB",
-  btn: "#4193F0",
+  btn: "#0099FF",
   btnHover: "#5EA1EF",
   searchBg: "#EFEFEF",
+  modalBackground: "rgba(0, 0, 0, 0.64)",
 };
 
 const sizes = {

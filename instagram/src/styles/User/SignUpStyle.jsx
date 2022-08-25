@@ -25,10 +25,35 @@ export const LoginContainer = styled.div`
 
 export const ImgLogo = styled.img`
   position: absolute;
-  top: 47px;
-  margin-top: 10px;
+  top: 50px;
   width: 175px;
-  // height: 100%;
+`;
+
+export const Text = styled.div`
+  width: 304px;
+  height: 58px;
+  margin-top: 100px;
+  font-weight: 700;
+  font-size: 13px;
+  color: #dadada;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const InputText = styled.input`
+  box-sizing: border-box; // index.css에
+  width: 268px;
+  height: 38px;
+  border: 1px solid ${({ theme }) => theme.palette.borderGrey};
+  border-radius: 4px;
+  outline: none;
+  margin-bottom: 5px;
+  padding: 11px 8px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
 `;
 
 export const LoginBtn = styled.button`
@@ -44,3 +69,9 @@ export const LoginBtn = styled.button`
   font-weight: 700;
   cursor: pointer;
 `;
+export const FormContainer = styled.form`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`
