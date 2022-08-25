@@ -1,9 +1,12 @@
 import axios, { setHeader } from '../../api/config';
 import styled from "@emotion/styled";
 import { useNavigate } from 'react-router-dom';
+import { userNo } from '../../store/user';
+import { useRecoilState } from "recoil";
 
 function KakaoLogin() {
     const navigate = useNavigate();
+    const [userNum, setUserNum] = useRecoilState(userNo);
 
     const jsKey = 'c45d6f34c0b90c11bf04e0fd4e4ce43c';
     window.Kakao.init(jsKey);
@@ -17,6 +20,13 @@ function KakaoLogin() {
         const token = data.token; // 응답 데이터 토큰에서 토 큰 얻기
         localStorage.setItem('jwtToken', token); // 로컬스토리지에 저장
         setHeader(token);
+        alert('카카오 로그인이 완료되었습니다');
+        setUserNum(data.userNo);
+        if(data.userExistence) {
+          navigate('/main');
+        } else {
+          navigate('/signup');
+        }
       } catch (err) {
         console.log(err)
       }
@@ -36,8 +46,7 @@ function KakaoLogin() {
               });
             },
         });
-        alert('카카오 로그인이 완료되었습니다');
-        navigate('/signup');
+
      }
 
     return (
