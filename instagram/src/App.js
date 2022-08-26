@@ -6,6 +6,7 @@ import SignUp from "./pages/SignUp";
 import MainPage from "./pages/MainPage";
 import Explore from "./pages/Explore";
 import UserPage from "./pages/UserPage";
+import ProfileEditPage from "./pages/ProfileEditPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path="/explore" element={<Explore />}></Route>
       <Route path="/main" element={<MainPage />}></Route>
       <Route path="/username" element={<UserPage />}></Route>
+      <Route path="/edit" element={<ProfileEditPage />}></Route>
     </Routes>
   );
 }

@@ -6,7 +6,7 @@ import { useRecoilState } from "recoil";
 
 function KakaoLogin() {
     const navigate = useNavigate();
-    const [userNum, setUserNum] = useRecoilState(userNo);
+    const [user, setUser] = useRecoilState(userNo);
 
     const jsKey = 'c45d6f34c0b90c11bf04e0fd4e4ce43c';
     window.Kakao.init(jsKey);
@@ -21,12 +21,13 @@ function KakaoLogin() {
         localStorage.setItem('jwtToken', token); // 로컬스토리지에 저장
         setHeader(token);
         alert('카카오 로그인이 완료되었습니다');
-        setUserNum(data.userNo);
-        if(data.userExistence) {
-          navigate('/main');
-        } else {
+        setUser(data.userNo);
+        // if(data.userExistence) {
+        //   navigate('/main');
+        // } else {
           navigate('/signup');
-        }
+          console.log(data.userNo);
+        // }
       } catch (err) {
         console.log(err)
       }
