@@ -1,5 +1,5 @@
 import React from "react";
-import axios from 'axios';
+import axios, { setHeader } from '../../api/config';
 import {
   LoginBox,
   LoginContainer,
@@ -18,7 +18,6 @@ function SignUp() {
     name: '',
     nickname: '',
   })
-
   const [data, setData] = useState({});
   
   const onSubmit =(e) => {
@@ -44,13 +43,13 @@ function SignUp() {
     handleSignup(account_email, {nickname}, name)
   }
 
-  const onChange = (e) => {
-    e.preventDefault();
-    setData({
-      ...data,
-      [e.target.name]: e.target.value
-    })
-  }
+  // const onChange = (e) => {
+  //   e.preventDefault();
+  //   setData({
+  //     ...data,
+  //     [e.target.name]: e.target.value
+  //   })
+  // }
 
   const inputHandleOnChange = (e,key) => {
     setUserInputValue({...userInputValue, [key]:e.target.value})
@@ -58,19 +57,18 @@ function SignUp() {
 
   const handleSignup = async(account_email, profile, name) => {
     try {
-      const {data} = await axios.post('/user/profile/:userNo', { 
+      const {data} = await axios.post(`user/profile/:userNo`, { 
         profile_nickname: profile.nickname,
         account_email,
         name,
       })
-        console.log(data);
         alert('회원가입이 완료되었습니다');
         navigate('/main');
     } catch (err) {
       console.log(err)
       alert('회원가입 실패');
     }
-    }
+  }
 
   return (
       <LoginBox>

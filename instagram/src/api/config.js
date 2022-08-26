@@ -9,6 +9,10 @@ export const setHeader = token => {
   instance.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 };
 
+export const removeHeader = () => {
+  delete instance.defaults.common["Authorization"]; // axios header에서 Authorization 제거
+};
+
 instance.interceptors.request.use(
   function (request) {
     return request;
