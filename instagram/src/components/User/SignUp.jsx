@@ -65,8 +65,7 @@ function SignUp() {
         email,
         name,
       })
-        alert('회원가입이 완료되었습니다');
-        
+        alert('회원가입이 완료되었습니다'); 
         navigate('/main');
     } catch (err) {
       console.log(err)

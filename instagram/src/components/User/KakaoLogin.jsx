@@ -22,12 +22,11 @@ function KakaoLogin() {
         setHeader(token);
         alert('카카오 로그인이 완료되었습니다');
         setUser(data.userNo);
-        // if(data.userExistence) {
-        //   navigate('/main');
-        // } else {
+        if(data.userExistence) {
+          navigate('/main');
+        } else {
           navigate('/signup');
-          console.log(data.userNo);
-        // }
+        }
       } catch (err) {
         console.log(err)
       }
