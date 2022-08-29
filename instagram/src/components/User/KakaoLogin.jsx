@@ -55,7 +55,6 @@ function KakaoLogin() {
 
 export default KakaoLogin;
 
-
 const ImgBtn = styled.img`
   margin-top: 10px;
   width: 100px;

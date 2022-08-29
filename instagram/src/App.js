@@ -54,7 +54,6 @@ function App() {
     </Routes>
   );
 }
-
 injectGlobal`
   * {
     margin: 0;
