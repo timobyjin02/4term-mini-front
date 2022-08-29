@@ -47,7 +47,6 @@ function KakaoLogin() {
               });
             },
         });
-
      }
 
     return (
@@ -56,7 +55,6 @@ function KakaoLogin() {
 };
 
 export default KakaoLogin;
-
 
 const ImgBtn = styled.img`
   margin-top: 10px;

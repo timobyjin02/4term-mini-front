@@ -69,7 +69,6 @@ export const LoginBtn = styled.button`
   font-weight: 700;
   cursor: pointer;
 `;
-
 export const Form = styled.form`
     display: flex;
     justify-content: center;

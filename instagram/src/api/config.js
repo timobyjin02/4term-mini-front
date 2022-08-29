@@ -1,12 +1,12 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://15.164.232.205:8080/moae",
+  baseURL: "http://3.35.218.239:8080/moae",
 });
 
 export const setHeader = token => {
   // axios 헤더에 token을 넣어준다
-  instance.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+  instance.defaults.headers.common["Authorization"] = `${token}`;
 };
 
 export const removeHeader = () => {
