@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Menu from "../components/Navigation/Menu";
-import { ReactComponent as SearchIcon } from "../assets/searchIcon.svg";
 import {
   Container,
   Wrap,
   ImgLogo,
   Search,
 } from "../styles/Navigation/NavigationStyle";
+import ComboBox from '../components/Navigation/ComboBox';
 
 function Navigation() {
   const [search, setSearch] = useState("");
@@ -24,15 +24,7 @@ function Navigation() {
         <Link to="/main">
           <ImgLogo alt="instagram logo" src="img/instagramLogo.png" />
         </Link>
-        <Search>
-          <SearchIcon className="search" />
-          <input
-            type="text"
-            value={search}
-            placeholder="검색"
-            onChange={onChange}
-          />
-        </Search>
+        <ComboBox />
         <Menu />
       </Wrap>
     </Container>
