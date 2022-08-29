@@ -51,3 +51,15 @@ export const Input = styled.textarea`
   width: 100%;
   height: 100%;
 `;
+
+export const SubmitBtn = styled.button`
+  ${({ theme }) => `
+  height: 20px;
+  margin: 10px 5px;
+  background: ${theme.palette.backgroundWhite};
+  color: ${theme.palette.btn};
+  font-weight: bold;
+  font-size: 1em;
+  align-self: flex-end;
+  `}
+`;

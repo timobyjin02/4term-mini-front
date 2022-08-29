@@ -11,18 +11,19 @@ import LoginInputText from "./Input";
 import { LoginBtn } from "./Button";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import { userNo } from '../../store/user';
 import { useRecoilState } from "recoil";
+import { userNo } from '../../store/user';
 
 function SignUp() {
   const navigate = useNavigate();
+  const [user] = useRecoilState(userNo);
+
   const [userInputValue, setUserInputValue] = useState({
     email: '',
     name: '',
     nickname: '',
   })
-  const [user] = useRecoilState(userNo);
-  
+
   const onSubmit =(e) => {
     e.preventDefault();
 
@@ -65,6 +66,7 @@ function SignUp() {
         name,
       })
         alert('회원가입이 완료되었습니다');
+        
         navigate('/main');
     } catch (err) {
       console.log(err)

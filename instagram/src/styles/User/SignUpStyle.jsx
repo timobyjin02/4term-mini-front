@@ -70,8 +70,8 @@ export const LoginBtn = styled.button`
   cursor: pointer;
 `;
 export const Form = styled.form`
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
   align-items: center;
   flex-direction: column;
 `

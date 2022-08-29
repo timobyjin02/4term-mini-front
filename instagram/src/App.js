@@ -9,6 +9,7 @@ import UserPage from "./pages/UserPage";
 import axios, { setHeader, removeHeader } from "./api/config";
 import { constSelector, useRecoilState } from "recoil";
 import { userNo } from "./store/user";
+import ProfileEditPage from "./pages/ProfileEditPage";
 
 function App() {
   const location = useLocation();
@@ -51,6 +52,7 @@ function App() {
       <Route path="/explore" element={<Explore />}></Route>
       <Route path="/main" element={<MainPage />}></Route>
       <Route path="/username" element={<UserPage />}></Route>
+      <Route path="/edit" element={<ProfileEditPage />}></Route>
     </Routes>
   );
 }
