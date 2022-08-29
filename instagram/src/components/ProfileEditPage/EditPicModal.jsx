@@ -12,8 +12,8 @@ import {
 
 function EditPicModal({ setShowModal, onUploadPic, deletePic }) {
   return (
-    <ModalBackground>
-      <Modal>
+    <ModalBackground onClick={() => setShowModal(false)}>
+      <Modal onClick={(event) => event.stopPropagation()}>
         <ModalHeader>
           <HeadText>프로필 사진 바꾸기</HeadText>
         </ModalHeader>

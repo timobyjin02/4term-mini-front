@@ -41,3 +41,11 @@ export const ProfileEditItemInput = styled.textarea`
     line-height: 20px;
   }
 `;
+
+export const EditGender = styled.select`
+  width: 100%;
+  border: 1px solid ${({ theme }) => theme.palette.borderGrey};
+  border-radius: 3px;
+  padding: 5px 10px;
+  font-size: 16px;
+`;

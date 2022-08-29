@@ -20,8 +20,6 @@ function EditProfilePic({ userData, setUserData }) {
     setShowModal(false);
   };
 
-  const openModal = () => setShowModal(true);
-
   const deletePic = () => {
     setUserData({ ...userData, profile_image: null });
     setImg(null);
@@ -34,7 +32,7 @@ function EditProfilePic({ userData, setUserData }) {
       <UserIdEditPic>
         <Nickname>modernAgile_4기</Nickname>
         {img ? (
-          <PicEditModalBtn onClick={openModal}>
+          <PicEditModalBtn onClick={() => setShowModal(true)}>
             프로필 사진 바꾸기
           </PicEditModalBtn>
         ) : (
