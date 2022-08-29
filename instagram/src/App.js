@@ -7,7 +7,7 @@ import MainPage from "./pages/MainPage";
 import Explore from "./pages/Explore";
 import UserPage from "./pages/UserPage";
 import axios, { setHeader, removeHeader } from "./api/config";
-import { constSelector, useRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import { userNo } from "./store/user";
 import ProfileEditPage from "./pages/ProfileEditPage";
 
