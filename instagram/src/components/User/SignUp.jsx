@@ -1,15 +1,18 @@
 import React from "react";
-import axios, { setHeader } from '../../api/config';
+import axios from '../../api/config';
 import {
   LoginBox,
   LoginContainer,
   ImgLogo,
   Text,
+  Form,
 } from "../../styles/User/SignUpStyle";
 import LoginInputText from "./Input";
 import { LoginBtn } from "./Button";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import { userNo } from '../../store/user';
+import { useRecoilState } from "recoil";
 
 function SignUp() {
   const navigate = useNavigate();
@@ -18,11 +21,10 @@ function SignUp() {
     name: '',
     nickname: '',
   })
-  const [data, setData] = useState({});
+  const [user] = useRecoilState(userNo);
   
   const onSubmit =(e) => {
     e.preventDefault();
-    const {account_email,name, nickname } = data
 
     if (!e.target.account_email.value) {
       alert("이메일을 입력하세요")
@@ -40,7 +42,7 @@ function SignUp() {
       return
     }
 
-    handleSignup(account_email, {nickname}, name)
+    handleSignup(e.target.account_email.value, e.target.nickname.value, e.target.name.value)
   }
 
   // const onChange = (e) => {
@@ -55,11 +57,11 @@ function SignUp() {
     setUserInputValue({...userInputValue, [key]:e.target.value})
   }
 
-  const handleSignup = async(account_email, profile, name) => {
+  const handleSignup = async(email, nickname, name) => {
     try {
-      const {data} = await axios.post(`user/profile/:userNo`, { 
-        profile_nickname: profile.nickname,
-        account_email,
+      const {data} = await axios.patch(`user/profile/${user}`, { 
+        nickname,
+        email,
         name,
       })
         alert('회원가입이 완료되었습니다');
@@ -75,12 +77,12 @@ function SignUp() {
         <LoginContainer>
           <ImgLogo alt="instagram logo" src="img/instagramLogo.png" />
           <Text>친구들의 사진과 동영상을 보려면 가입하세요.</Text>
-          <form onSubmit={e => onSubmit(e)}>
+          <Form onSubmit={e => onSubmit(e)}>
               <LoginInputText value={userInputValue.email} type='email' name="account_email" placeholder='휴대폰 번호 또는 이메일 주소' onChange={e => inputHandleOnChange(e, 'email')} />
-              <LoginInputText value={userInputValue.nickname} name="nickname" placeholder='성명' onChange={e => inputHandleOnChange(e, 'nickname')}/>
-              <LoginInputText value={userInputValue.name} name="name" placeholder='사용자 이름'  onChange={e => inputHandleOnChange(e, 'name')}/>
+              <LoginInputText value={userInputValue.nickname} name="nickname" placeholder='닉네임' onChange={e => inputHandleOnChange(e, 'nickname')}/>
+              <LoginInputText value={userInputValue.name} name="name" placeholder='성명'  onChange={e => inputHandleOnChange(e, 'name')}/>
               <LoginBtn type="submit">가입</LoginBtn>
-          </form>
+          </Form>
         </LoginContainer>
       </LoginBox>
   );
