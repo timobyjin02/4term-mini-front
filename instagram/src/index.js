@@ -4,10 +4,16 @@ import "./index.css";
 import App from "./App";
 import { ThemeProvider } from "@emotion/react";
 import theme from "./styles/theme";
+import { BrowserRouter as Router } from "react-router-dom";
+import { RecoilRoot } from "recoil";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <ThemeProvider theme={theme}>
+  <RecoilRoot>
+    <Router>
+      <ThemeProvider theme={theme}>
         <App />
-    </ThemeProvider>    
+      </ThemeProvider>
+    </Router>
+  </RecoilRoot>
 );
