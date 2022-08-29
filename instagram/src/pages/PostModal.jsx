@@ -11,7 +11,9 @@ import {
 } from "../styles/Post/PostModalStyle";
 
 function PostModal({ setShowModal }) {
-  const [imgSrc, setImgSrc] = useState("");
+  const [imgSrc, setImgSrc] = useState({ files: [], URLForShow: "" });
+
+  // const [imgSrc, setImgSrc] = useState("");
   const [selected, setSelected] = useState(false);
   const onClose = () => setShowModal(false);
   const stopBubble = (e) => e.stopPropagation();
