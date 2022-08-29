@@ -8,7 +8,6 @@ import { useRecoilState } from "recoil";
 import { userNo } from "../store/user";
 
 function LoginPage() {
-
   const location = useLocation();
   const navigate = useNavigate();
   const [user, setUser] = useRecoilState(userNo);
