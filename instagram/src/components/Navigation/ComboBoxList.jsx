@@ -28,8 +28,6 @@ const Wrapper = styled.div`
   border: 1px solid #f7f7f7;
   box-shadow: 0 2px 1px 0px rgba(0, 0, 0, .08);
   width: 100%;
-  /* opacity: 0;
-  visibility: hidden; */
 `;
 
 const List = styled.ul``;

@@ -14,7 +14,7 @@ function LoginPage() {
 
   async function getProperty(isCurrentRootPath) {
     try {
-      const response = await axios.get("/user/profile/:userNo");
+      const response = await axios.get(`/user/profile/${user}`);
       setUser(response.data.userNo);
       if (isCurrentRootPath) {
         navigate("/main");
@@ -22,13 +22,13 @@ function LoginPage() {
     } catch (err) {
       console.log("로그인 정보가 만료되었습니다");
       navigate("/");
-      localStorage.removeItem("token");
+      localStorage.removeItem("jwtToken");
       removeHeader();
     }
   }
 
   useEffect(function () {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("jwtToken");
     const isCurrentRootPath = location.pathname === "/";
 
     if (!token) {
