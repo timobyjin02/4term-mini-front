@@ -5,36 +5,39 @@ export const Container = styled.div`
   justify-content: center;
 `;
 
-export const Card = styled.div`
+export const Wrap = styled.div`
   margin-top: 68px;
-  width: 600px;
-  height: 830px;
+  width: 500px;
+  height: fit-content;
   border: 1px solid ${({ theme }) => theme.palette.borderGrey};
+  border-radius: 8px;
 `;
 export const Header = styled.div`
-  width: 600px;
+  width: 100%;
   height: 60px;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid ${({ theme }) => theme.palette.borderGrey};
 `;
 
 export const ProfileImage = styled.img`
   padding-left: 16px;
-  width: 34px;
+  width: 40px;
   &:hover {
     cursor: pointer;
   }
 `;
 
-export const UserId = styled.div`
+export const UserId = styled.p`
   padding-left: 12px;
 `;
 
-export const Image = styled.div`
+export const Image = styled.img`
   // img
-  width: 600px;
-  height: 600px;
-  background-color: green;
+  width: 100%;
+  height: fit-content;
+  object-fit: cover;
+  /* background-color: green; */
 `;
 
 export const Liked = styled.div`
