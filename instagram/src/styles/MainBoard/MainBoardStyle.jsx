@@ -1,20 +1,23 @@
 import styled from "@emotion/styled";
 
-export const Container = styled.div`
+export const BoardsContainer = styled.div`
   display: flex;
   justify-content: center;
+  background-color: ${({ theme }) => theme.palette.backgroundGrey};
 `;
 
-export const Wrap = styled.div`
+export const BoardsWrap = styled.div`
+  background-color: ${({ theme }) => theme.palette.backgroundWhite};
   margin-top: 68px;
   width: 500px;
   height: fit-content;
   border: 1px solid ${({ theme }) => theme.palette.borderGrey};
   border-radius: 8px;
 `;
+
 export const Header = styled.div`
   width: 100%;
-  height: 60px;
+  height: 50px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid ${({ theme }) => theme.palette.borderGrey};
@@ -37,41 +40,57 @@ export const Image = styled.img`
   width: 100%;
   height: fit-content;
   object-fit: cover;
-  /* background-color: green; */
 `;
 
-export const Liked = styled.div`
+export const LikeWrap = styled.div`
   display: flex;
-  padding-left: 16px;
   &:hover {
     cursor: pointer;
   }
 `;
 
-export const LikedText = styled.div`
-  font-size: 13px;
-  font-weight: 550;
+export const LikeText = styled.p`
+  font-size: 14px;
+  font-weight: 700;
+`;
+
+export const FooterContainer = styled.div`
+  padding-left: 16px;
+`;
+
+export const NicknameAndContent = styled.div`
+  display: flex;
+  width: 100%;
+`;
+
+export const CommentNickname = styled.p`
+  margin: 8px 8px 0px 0px;
+  font-size: 14px;
+  font-weight: 700;
+`;
+
+export const Contents = styled.p`
+  margin-top: 8px;
+  font-size: 14px;
+`;
+
+export const CommentsAllView = styled.button`
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: ${({ theme }) => theme.palette.fontGrey};
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const Comments = styled.div`
-  padding-left: 16px;
-`;
-
-export const CommentsPost = styled.div`
-  margin-top: 8px;
-  font-size: 13px;
-`;
-
-export const CommentsAllView = styled.div`
   margin-top: 5px;
   font-size: 12px;
-  color: #c7c7c7;
-  &:hover {
-    cursor: pointer;
-  }
 `;
 
-export const CommentsText = styled.div`
-  margin-top: 5px;
-  font-size: 12px;
+export const Date = styled.p`
+  font-size: 10px;
+  color: ${({ theme }) => theme.palette.fontGrey};
+  margin: 6px 0px;
 `;

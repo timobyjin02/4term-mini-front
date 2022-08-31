@@ -7,7 +7,7 @@ import { ReactComponent as Comments } from "../../assets/comments.svg";
 import { ReactComponent as DM } from "../../assets/dm.svg";
 import { ReactComponent as Bookmark } from "../../assets/bookmark.svg";
 
-function CommentMenu() {
+function FooterMenu() {
   return (
     <CardMenu>
       <Interactions>
@@ -20,4 +20,4 @@ function CommentMenu() {
   );
 }
 
-export default CommentMenu;
+export default FooterMenu;

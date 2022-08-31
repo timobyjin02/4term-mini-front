@@ -12,7 +12,7 @@ function BoardBody({ nickname, images }) {
     <>
       <Header>
         <ProfileImage alt="profile image" src="img/profile.png" />
-        <UserId>{`${nickname}`}</UserId>
+        <UserId>{nickname}</UserId>
       </Header>
       <Image src={images[0]}></Image>
     </>

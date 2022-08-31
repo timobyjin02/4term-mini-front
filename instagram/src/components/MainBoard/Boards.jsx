@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Container, Wrap } from "../../styles/MainBoard/MainBoardStyle";
+import {
+  BoardsContainer,
+  BoardsWrap,
+} from "../../styles/MainBoard/MainBoardStyle";
 import BoardBody from "./BoardBody";
-import Comment from "./Comment";
+import BoardFooter from "./BoardFooter";
 
 function Boards() {
   const url = `${process.env.REACT_APP_URL}post/all`;
@@ -39,12 +42,16 @@ function Boards() {
 function Board({ postInfo }) {
   console.log(postInfo);
   return (
-    <Container>
-      <Wrap>
+    <BoardsContainer>
+      <BoardsWrap>
         <BoardBody nickname={postInfo.nickname} images={postInfo.images} />
-        <Comment />
-      </Wrap>
-    </Container>
+        <BoardFooter
+          nickname={postInfo.nickname}
+          content={postInfo.content}
+          date={postInfo.date}
+        />
+      </BoardsWrap>
+    </BoardsContainer>
   );
 }
 
