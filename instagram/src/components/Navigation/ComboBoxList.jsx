@@ -9,8 +9,8 @@ export default function ComboBoxList({items, loading, focus, complete, searchWor
   return(
     <Wrapper>
       <List>
-        {items.length > 0 ? (items.map((_,index)=> {
-          return <Item key={index}>{index}</Item>
+        {items.length > 0 ? (items.map((items,index)=> {
+          return <Item key={index}>{items.nickname}</Item>
         })) : <Item>검색 결과가 없습니다</Item>}
       </List>
   </Wrapper>
