@@ -1,6 +1,22 @@
-import { atom } from "recoil";
+import { createSlice } from "@reduxjs/toolkit";
 
-export const userNo = atom({
-  key: "userNo",
-  default: null,
+const initialState = {
+  token: null,
+  decodingInfo: null,
+};
+
+const user = createSlice({
+  name: "user",
+  initialState,
+  reducers: {
+    setUserNo: (state, action) => {
+      state.token = action.payload;
+    },
+    setDecodingInfo: (state, action) => {
+      state.decodingInfo = action.payload;
+    },
+  },
 });
+
+export const { setUserNo, setDecodingInfo } = user.actions;
+export default user.reducer;

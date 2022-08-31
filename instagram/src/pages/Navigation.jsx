@@ -14,9 +14,7 @@ function Navigation() {
   const onChange = (e) => {
     setSearch(e.target.value);
   };
-  // const filterTitle = users.filter((p) => {
-  //     return p.title.toLocaleLowerCase().includes(search.toLocaleLowerCase())
-  // })
+
 
   return (
     <Container>

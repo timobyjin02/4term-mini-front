@@ -4,31 +4,30 @@ import { Login } from "../styles/User/LoginPageStyle";
 import LoginBody from "../components/User/LoginBody";
 import LoginFooter from "../components/User/LoginFooter";
 import axios, { setHeader, removeHeader } from "../api/config";
-import { useRecoilState } from "recoil";
-import { userNo } from "../store/user";
+import {decodingToken} from '../utils/getToken';
 
 function LoginPage() {
   const location = useLocation();
   const navigate = useNavigate();
-  const [user, setUser] = useRecoilState(userNo);
+  const userInfo = decodingToken?decodingToken() :null;
+  // console.log(userInfo.userNo);
 
   async function getProperty(isCurrentRootPath) {
     try {
-      const response = await axios.get("/user/profile/:userNo");
-      setUser(response.data.userNo);
+      const response = await axios.get(`/user/profile/${userInfo.userNo}`);
       if (isCurrentRootPath) {
         navigate("/main");
       }
     } catch (err) {
       console.log("로그인 정보가 만료되었습니다");
       navigate("/");
-      localStorage.removeItem("token");
+      localStorage.removeItem("jwtToken");
       removeHeader();
     }
   }
 
   useEffect(function () {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("jwtToken");
     const isCurrentRootPath = location.pathname === "/";
 
     if (!token) {
