@@ -1,7 +1,6 @@
 import axios from '../../api/config';
 import React from 'react';
 import styled from '@emotion/styled';
-import Progress from '../Progress';
 import { ReactComponent as SearchIcon } from "../../assets/searchIcon.svg";
 import { useState } from 'react';
 import { useCallback } from 'react';
@@ -61,9 +60,6 @@ function ComboBox() {
           onFocus={() => {setFocus(true)}}
           onBlur={() => {setFocus(false)}}
         />
-        {
-          loading && <ProgressWrapper><Progress/></ProgressWrapper>
-        }
       </InputWrapper>
       <ComboBoxList items={items} loading={loading} focus={focus} complete={complete} searchWord={searchWord} />
     </Wrapper>
@@ -94,14 +90,3 @@ const Wrapper = styled.label`
   min-width: 200px;
   padding: 6px;
 `;
-
-const ProgressWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
