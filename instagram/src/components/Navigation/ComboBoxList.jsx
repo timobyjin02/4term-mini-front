@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import SearchProfile from "../Navigation/SearchProfile";
 
 export default function ComboBoxList({items, loading, focus, complete, searchWord}) {
 
@@ -10,7 +11,7 @@ export default function ComboBoxList({items, loading, focus, complete, searchWor
     <Wrapper>
       <List>
         {items.length > 0 ? (items.map((items,index)=> {
-          return <Item key={index}>{items.nickname}</Item>
+          return <Item key={index}><SearchProfile /><span>{items.nickname}</span></Item>
         })) : <Item>검색 결과가 없습니다</Item>}
       </List>
   </Wrapper>
@@ -30,14 +31,24 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 
-const List = styled.ul``;
+const List = styled.ul`
+`;
 
 const Item = styled.li`
-  padding: 6px 10px;
+  display: flex;
+  align-items: center;
   transition: all 0.25s;
   font-size: 14px;
   cursor: pointer;
   &:hover {
     background-color: #f7f7f7;
+  }
+  span {
+    display: inline-block;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 10px;
+    margin-left: 10px;
   }
 `;
