@@ -7,7 +7,7 @@ export const PictureId = styled.div`
   display: flex;
 `;
 
-export const UserPic = styled.div`
+export const UserPic = styled.img`
   width: 38px;
   height: 38px;
   border-radius: 50%;
@@ -16,6 +16,7 @@ export const UserPic = styled.div`
 `;
 
 export const UserIdEditPic = styled.div`
+  padding-bottom: 1px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,8 +28,21 @@ export const Nickname = styled.h1`
   font-weight: 400;
 `;
 
-export const PicEditBtn = styled.button`
+export const PicEditBtn = styled.label`
   color: ${({ theme }) => theme.palette.btn};
   font-size: 14px;
   font-weight: 700;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export const PicEditModalBtn = styled.button`
+  color: ${({ theme }) => theme.palette.btn};
+  font-size: 14px;
+  font-weight: 700;
+`;
+
+export const InputPicFile = styled.input`
+  display: none;
 `;

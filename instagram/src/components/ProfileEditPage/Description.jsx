@@ -4,16 +4,15 @@ import {
   ProfileEditItemName,
   ProfileEditItem,
   ProfileEditInputBox,
-  ProfileEditItemText,
+  ProfileEditItemTextarea,
 } from "../../styles/ProfileEditPage/ItemDetailStyle";
 
-function ItemDetail({ itemName, keyName, userData, setUserData }) {
+function Description({ itemName, keyName, userData, setUserData }) {
   const onChange = (event) => {
     setUserData({
       ...userData,
       [keyName]: event.target.value,
     });
-    console.log(userData);
   };
 
   return (
@@ -22,15 +21,15 @@ function ItemDetail({ itemName, keyName, userData, setUserData }) {
         <ProfileEditItem htmlFor={itemName}>{itemName}</ProfileEditItem>
       </ProfileEditItemName>
       <ProfileEditInputBox>
-        <ProfileEditItemText
+        <ProfileEditItemTextarea
           value={userData[keyName] ? userData[keyName] : ""}
           onChange={onChange}
-          maxLength={itemName === "웹 사이트" ? 40 : 25}
+          maxLength={55}
           id={itemName}
-        ></ProfileEditItemText>
+        ></ProfileEditItemTextarea>
       </ProfileEditInputBox>
     </ProfileEditItemBox>
   );
 }
 
-export default ItemDetail;
+export default Description;
