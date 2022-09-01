@@ -2,31 +2,34 @@ import EditProfilePic from "./EditProfilePic";
 import DetailsForm from "./DetailsForm";
 import { Content } from "../../styles/ProfileEditPage/EditContentStyle";
 import { useState, useEffect } from "react";
-import axios from "axios";
+import axios from "../../api/config";
+import { getUserNo } from "./../../utils/getToken";
+import { useNavigate } from "react-router-dom";
 
 function EditContent() {
   const [userData, setUserData] = useState({});
+  const nav = useNavigate();
 
-  const token = localStorage.getItem("jwtToken");
+  const userNo = getUserNo();
 
   useEffect(() => {
-    axios
-      .get("http://3.35.218.239:8080/moae/user/profile/42", {
-        headers: { authorization: token },
-      })
-      .then((res) => setUserData({ ...res.data.userInfo }));
+    axios.get(`user/profile/${userNo}`).then((res) => {
+      setUserData({ ...res.data.userInfo });
+      console.log(res.data.userInfo);
+    });
   }, []);
 
   const onSubmit = (event) => {
     event.preventDefault();
 
     axios
-      .patch(`http://3.35.218.239:8080/moae/user/profile/42`, userData, {
-        headers: { authorization: token },
+      .patch(`user/profile/${userNo}`, userData)
+      .then((res) => {
+        alert(res.data.msg);
+        nav("/username");
       })
-      .then((res) => console.log(res))
       .catch((err) => {
-        console.log(err);
+        console.error(err);
       });
   };
   return (

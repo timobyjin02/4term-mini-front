@@ -3,6 +3,8 @@ import {
   SubmitBtn,
 } from "../../styles/ProfileEditPage/DetailsFormStyle";
 import ItemDetail from "./ItemDetail";
+import Description from "./Description";
+import GenderSelect from "./GenderSelect";
 
 function DetailsForm({ userData, setUserData, onSubmit }) {
   return (
@@ -25,7 +27,7 @@ function DetailsForm({ userData, setUserData, onSubmit }) {
         keyName="website"
         itemName="웹 사이트"
       />
-      <ItemDetail
+      <Description
         userData={userData}
         setUserData={setUserData}
         keyName="description"
@@ -43,7 +45,7 @@ function DetailsForm({ userData, setUserData, onSubmit }) {
         keyName="phone"
         itemName="전화번호"
       />
-      <ItemDetail
+      <GenderSelect
         userData={userData}
         setUserData={setUserData}
         keyName="gender"

@@ -23,22 +23,29 @@ export const ProfileEditItem = styled.label`
   justify-content: flex-end;
 `;
 
-export const ProfileEditItemInput = styled.textarea`
+export const ProfileEditItemText = styled.input`
   width: 100%;
   border: 1px solid ${({ theme }) => theme.palette.borderGrey};
   border-radius: 3px;
   padding: 5px 10px;
   font-size: 16px;
+  height: 33px;
   &:focus {
     border: 2px solid #262626;
   }
-  &.default {
-    height: 33px;
-  }
-  &.higher {
-    height: 75px;
-    vertical-align: top;
-    line-height: 20px;
+`;
+
+export const ProfileEditItemTextarea = styled.textarea`
+  width: 100%;
+  border: 1px solid ${({ theme }) => theme.palette.borderGrey};
+  border-radius: 3px;
+  padding: 5px 10px;
+  font-size: 16px;
+  height: 75px;
+  vertical-align: top;
+  line-height: 20px;
+  &:focus {
+    border: 2px solid #262626;
   }
 `;
 

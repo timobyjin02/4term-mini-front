@@ -9,3 +9,8 @@ export const decodingToken = () => {
   if (getToken()) return jwtDecode(localStorage.getItem("jwtToken"));
   return undefined;
 };
+
+export const getUserNo = () => {
+  if (getToken()) return jwtDecode(localStorage.getItem("jwtToken")).userNo;
+  return undefined;
+};
