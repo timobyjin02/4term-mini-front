@@ -8,11 +8,11 @@ function CommentMenu() {
   return (
     <CardMenu>
       <Interactions>
-        <Likes class="icon" />
-        <Comments class="icon" />
-        <DM class="icon" />
+        <Likes className="icon" />
+        <Comments className="icon" />
+        <DM className="icon" />
       </Interactions>
-      <Bookmark class="icon" />
+      <Bookmark className="icon" />
     </CardMenu>
   );
 }

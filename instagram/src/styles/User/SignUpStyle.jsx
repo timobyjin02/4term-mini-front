@@ -34,7 +34,7 @@ export const Text = styled.div`
   height: 58px;
   margin-top: 100px;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 13px;
   color: #dadada;
   display: flex;
   justify-content: center;
@@ -53,6 +53,7 @@ export const InputText = styled.input`
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;
+  display: flex;
 `;
 
 export const LoginBtn = styled.button`
@@ -68,3 +69,9 @@ export const LoginBtn = styled.button`
   font-weight: 700;
   cursor: pointer;
 `;
+export const Form = styled.form`
+    display: flex;
+    justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`

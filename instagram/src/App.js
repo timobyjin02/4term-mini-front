@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { injectGlobal } from "@emotion/css";
 import LoginPage from "./pages/LoginPage";
 import SignUp from "./pages/SignUp";
@@ -10,19 +10,16 @@ import ProfileEditPage from "./pages/ProfileEditPage";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<LoginPage />}></Route>
-        <Route path="/signup" element={<SignUp />}></Route>
-        <Route path="/explore" element={<Explore />}></Route>
-        <Route path="/main" element={<MainPage />}></Route>
-        <Route path="/username" element={<UserPage />}></Route>
-        <Route path="/edit" element={<ProfileEditPage />}></Route>
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<LoginPage />}></Route>
+      <Route path="/signup" element={<SignUp />}></Route>
+      <Route path="/explore" element={<Explore />}></Route>
+      <Route path="/main" element={<MainPage />}></Route>
+      <Route path="/username" element={<UserPage />}></Route>
+      <Route path="/edit" element={<ProfileEditPage />}></Route>
+    </Routes>
   );
 }
-
 injectGlobal`
   * {
     margin: 0;
