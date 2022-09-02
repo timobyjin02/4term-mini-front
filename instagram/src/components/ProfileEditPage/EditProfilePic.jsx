@@ -10,18 +10,17 @@ import {
 } from "../../styles/ProfileEditPage/EditProfilePicStyle";
 import EditPicModal from "./EditPicModal";
 
-function EditProfilePic({ userData, setUserData }) {
-  const [img, setImg] = useState(null);
+function EditProfilePic({ userData, setUserData, nickname, img, setImg }) {
   const [showModal, setShowModal] = useState(false);
 
   const onUploadPic = (event) => {
-    setUserData({ ...userData, profile_image: event.target.files[0] });
+    setUserData({ ...userData, profileImg: event.target.files[0] });
     setImg(URL.createObjectURL(event.target.files[0]));
     setShowModal(false);
   };
 
   const deletePic = () => {
-    setUserData({ ...userData, profile_image: null });
+    setUserData({ ...userData, profileImg: null });
     setImg(null);
     setShowModal(false);
   };
@@ -30,7 +29,7 @@ function EditProfilePic({ userData, setUserData }) {
     <PictureId>
       <UserPic src={img ? img : "img/defaultProfile.jpg"} />
       <UserIdEditPic>
-        <Nickname>modernAgile_4기</Nickname>
+        <Nickname>{nickname}</Nickname>
         {img ? (
           <PicEditModalBtn onClick={() => setShowModal(true)}>
             프로필 사진 바꾸기
