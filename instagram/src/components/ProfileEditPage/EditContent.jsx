@@ -8,6 +8,8 @@ import { useNavigate } from "react-router-dom";
 
 function EditContent() {
   const [userData, setUserData] = useState({});
+  const [nickname, setNickname] = useState("");
+  const [img, setImg] = useState(null);
   const nav = useNavigate();
 
   const userNo = getUserNo();
@@ -15,18 +17,26 @@ function EditContent() {
   useEffect(() => {
     axios.get(`user/profile/${userNo}`).then((res) => {
       setUserData({ ...res.data.userInfo });
-      console.log(res.data.userInfo);
+      setNickname(res.data.userInfo.nickname);
+      setImg(res.data.userInfo.profile_image);
     });
-  }, []);
+  }, [userNo]);
 
   const onSubmit = (event) => {
     event.preventDefault();
 
+    const formData = new FormData();
+
+    for (let [key, value] of Object.entries(userData)) {
+      formData.append(key, value);
+    }
+
     axios
-      .patch(`user/profile/${userNo}`, userData)
+      .patch(`user/profile/${userNo}`, formData)
       .then((res) => {
         alert(res.data.msg);
-        nav("/username");
+        if (res.data.success) nav("/username");
+        setImg(img);
       })
       .catch((err) => {
         console.error(err);
@@ -34,7 +44,13 @@ function EditContent() {
   };
   return (
     <Content>
-      <EditProfilePic userData={userData} setUserData={setUserData} />
+      <EditProfilePic
+        img={img}
+        setImg={setImg}
+        nickname={nickname}
+        userData={userData}
+        setUserData={setUserData}
+      />
       <DetailsForm
         userData={userData}
         setUserData={setUserData}

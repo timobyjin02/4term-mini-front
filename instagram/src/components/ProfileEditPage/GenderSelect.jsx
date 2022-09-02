@@ -13,7 +13,6 @@ function GenderSelect({ itemName, keyName, userData, setUserData }) {
       ...userData,
       [keyName]: event.target.value,
     });
-    console.log(userData.gender);
   };
 
   const Male = () => {
