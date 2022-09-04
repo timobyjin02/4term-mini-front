@@ -1,12 +1,20 @@
 import styled from "@emotion/styled";
 import DefaultImage from "../../assets/defaultImage.png";
+import { useRef, useEffect } from 'react';
 
 function SearchProfile({src}) {
+  const imageRef = useRef();
+
+  useEffect(() => {
+    imageRef.current.onerror = () => { // 이미지 로딩 실패시
+      imageRef.current.src = DefaultImage;
+    }
+  }, [])
 
   return (
     <Container>
       <Profile>
-        <Image alt="search image" src={src || DefaultImage}></Image>
+        <Image ref={imageRef} alt="search image" src={src || DefaultImage}></Image>
       </Profile>
     </Container>
   )
