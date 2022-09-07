@@ -21,7 +21,7 @@ function Menu() {
         <Notification className="icon" />
       </Link>
       <Link to="/username">
-        <ProfileImage alt="profile image" src="img/profile.png" />
+        <ProfileImage alt="profile image" src="/img/profile.png" />
       </Link>
     </Wrap>
   );
