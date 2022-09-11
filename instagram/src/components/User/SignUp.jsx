@@ -8,7 +8,7 @@ import {
   Form,
 } from "../../styles/User/SignUpStyle";
 import LoginInputText from "./Input";
-import { LoginBtn } from "./Button";
+import  LoginBtn  from "./Button";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import {decodingToken} from '../../utils/getToken';
