@@ -1,5 +1,5 @@
 import Navigation from "./Navigation";
-import MainBoard from "../components/MainBoard";
+import MainBoard from "../components/Comment/MainBoard";
 
 function MainPage() {
   return (
