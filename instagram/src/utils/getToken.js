@@ -14,3 +14,8 @@ export const getUserNo = () => {
   if (getToken()) return jwtDecode(localStorage.getItem("jwtToken")).userNo;
   return undefined;
 };
+
+export const getUserNickname = () => {
+  if (getToken()) return jwtDecode(localStorage.getItem("jwtToken")).nickname;
+  return undefined;
+};
