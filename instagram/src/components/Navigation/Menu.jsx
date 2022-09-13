@@ -5,10 +5,13 @@ import { ReactComponent as Post } from "../../assets/post.svg";
 import { ReactComponent as Notification } from "../../assets/notification.svg";
 import { Wrap, ProfileImage } from "../../styles/Navigation/MenuStyle";
 import PostModal from "../../pages/PostModal";
+import { getUserNickname } from "../../utils/getToken";
 
 function Menu() {
   const [showModal, setShowModal] = useState(false);
   const openModal = () => setShowModal(true);
+  const nickname = getUserNickname();
+
   // setShowModal(closed);
   return (
     <Wrap>
@@ -20,7 +23,7 @@ function Menu() {
       <Link to="/explore">
         <Notification className="icon" />
       </Link>
-      <Link to="/username">
+      <Link to={`/${nickname}`}>
         <ProfileImage alt="profile image" src="/img/profile.png" />
       </Link>
     </Wrap>
