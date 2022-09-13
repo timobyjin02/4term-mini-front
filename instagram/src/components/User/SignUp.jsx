@@ -11,12 +11,11 @@ import LoginInputText from "./Input";
 import { LoginBtn } from "./Button";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import { useRecoilState } from "recoil";
-import { userNo } from '../../store/user';
+import {decodingToken} from '../../utils/getToken';
 
 function SignUp() {
   const navigate = useNavigate();
-  const [user] = useRecoilState(userNo);
+  const userInfo = decodingToken();
 
   const [userInputValue, setUserInputValue] = useState({
     email: '',
@@ -60,7 +59,7 @@ function SignUp() {
 
   const handleSignup = async(email, nickname, name) => {
     try {
-      const {data} = await axios.patch(`user/profile/${user}`, { 
+      const {data} = await axios.patch(`user/profile/${userInfo.userNo}`, { 
         nickname,
         email,
         name,

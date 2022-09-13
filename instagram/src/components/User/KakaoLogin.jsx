@@ -1,12 +1,12 @@
 import axios, { setHeader } from '../../api/config';
 import styled from "@emotion/styled";
 import { useNavigate } from 'react-router-dom';
-import { userNo } from '../../store/user';
-import { useRecoilState } from "recoil";
+import {useDispatch, useSelector} from 'react-redux'
 
 function KakaoLogin() {
     const navigate = useNavigate();
-    const [user, setUser] = useRecoilState(userNo);
+    const dispatch = useDispatch();
+    const user = useSelector(state => state.user.token)
 
     const jsKey = 'c45d6f34c0b90c11bf04e0fd4e4ce43c';
     window.Kakao.init(jsKey);
@@ -21,7 +21,6 @@ function KakaoLogin() {
         localStorage.setItem('jwtToken', token); // 로컬스토리지에 저장
         setHeader(token);
         alert('카카오 로그인이 완료되었습니다');
-        setUser(data.userNo);
         if(data.userExistence) {
           navigate('/main');
         } else {

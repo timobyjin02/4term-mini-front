@@ -1,7 +1,6 @@
 import axios from '../../api/config';
 import React from 'react';
 import styled from '@emotion/styled';
-import Progress from '../Progress';
 import { ReactComponent as SearchIcon } from "../../assets/searchIcon.svg";
 import { useState } from 'react';
 import { useCallback } from 'react';
@@ -25,7 +24,7 @@ function ComboBox() {
   const [focus, setFocus] = useState(false); 
   const [loading, setLoading] = useState(false);
 
-  const request = useCallback(debounce(async function (value) {
+  const request = useCallback(debounce(async function (value) { // useCallback이 없으면 리렌더링 일어날 때마다 debounce 함수가 계속 생성 (하나만 원하기때문에)
     if (!value) return;
 
     setLoading(true); 
@@ -41,11 +40,11 @@ function ComboBox() {
         setLoading(false);
       })
 
-  }, 500), [])
+  }, 500), []) // side Effect가 일어나면 안되는 함수, 리렌더링이 자주 일어나는 컴포넌트
 
   const changeHandler = (event) => {
     request(event.target.value);
-    setSearchWord(event.target.value);
+    setSearchWord(event.target.value); // setSearchWord를 실행하면 컴포넌트 전체에 리렌더링이 일어남
     if(complete) {
       setComplete(false)
     }
@@ -59,11 +58,7 @@ function ComboBox() {
           onKeyUp={debounce(changeHandler, 1000)} 
           onChange={changeHandler} 
           onFocus={() => {setFocus(true)}}
-          onBlur={() => {setFocus(false)}}
         />
-        {
-          loading && <ProgressWrapper><Progress/></ProgressWrapper>
-        }
       </InputWrapper>
       <ComboBoxList items={items} loading={loading} focus={focus} complete={complete} searchWord={searchWord} />
     </Wrapper>
@@ -94,14 +89,3 @@ const Wrapper = styled.label`
   min-width: 200px;
   padding: 6px;
 `;
-
-const ProgressWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
