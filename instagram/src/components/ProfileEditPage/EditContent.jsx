@@ -3,7 +3,7 @@ import DetailsForm from "./DetailsForm";
 import { Content } from "../../styles/ProfileEditPage/EditContentStyle";
 import { useState, useEffect } from "react";
 import axios from "../../api/config";
-import { getUserNo } from "./../../utils/getToken";
+import { getUserNickname, getUserNo } from "./../../utils/getToken";
 import { useNavigate } from "react-router-dom";
 
 function EditContent() {
@@ -13,6 +13,7 @@ function EditContent() {
   const nav = useNavigate();
 
   const userNo = getUserNo();
+  const userNickname = getUserNickname();
 
   useEffect(() => {
     axios.get(`user/profile/${userNo}`).then((res) => {
@@ -35,7 +36,7 @@ function EditContent() {
       .patch(`user/profile/${userNo}`, formData)
       .then((res) => {
         alert(res.data.msg);
-        if (res.data.success) nav("/username");
+        if (res.data.success) nav(`/${userNickname}`);
         setImg(img);
       })
       .catch((err) => {
