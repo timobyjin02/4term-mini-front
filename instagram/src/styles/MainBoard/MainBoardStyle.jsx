@@ -8,7 +8,7 @@ export const BoardsContainer = styled.div`
 
 export const BoardsWrap = styled.div`
   background-color: ${({ theme }) => theme.palette.backgroundWhite};
-  margin-top: 68px;
+  margin-top: 16px;
   width: 500px;
   height: fit-content;
   border: 1px solid ${({ theme }) => theme.palette.borderGrey};
@@ -55,7 +55,7 @@ export const LikeText = styled.p`
 `;
 
 export const FooterContainer = styled.div`
-  padding-left: 16px;
+  padding: 0px 0px 16px 16px;
 `;
 
 export const NicknameAndContent = styled.div`
@@ -63,13 +63,13 @@ export const NicknameAndContent = styled.div`
   width: 100%;
 `;
 
-export const CommentNickname = styled.p`
+export const ContentsNickname = styled.p`
   margin: 8px 8px 0px 0px;
   font-size: 14px;
   font-weight: 700;
 `;
 
-export const Contents = styled.p`
+export const Content = styled.p`
   margin-top: 8px;
   font-size: 14px;
 `;

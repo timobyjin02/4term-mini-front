@@ -1,31 +1,31 @@
 import FooterMenu from "./FooterMenu";
 import {
   FooterContainer,
-  Comments,
-  Contents,
-  CommentsAllView,
+  Content,
   LikeWrap,
   LikeText,
-  CommentNickname,
+  ContentsNickname,
   NicknameAndContent,
-  Date,
 } from "../../styles/MainBoard/MainBoardStyle";
 
-function BoardFooter({ nickname, content, date }) {
+function BoardFooter({ nickname, content }) {
   return (
     <FooterContainer>
       <FooterMenu />
       <LikeWrap>
         <LikeText>좋아요 532개</LikeText>
       </LikeWrap>
-      <NicknameAndContent>
-        <CommentNickname>{nickname}yeoreum</CommentNickname>
-        <Contents>{content}</Contents>
-      </NicknameAndContent>
-      <CommentsAllView>댓글 모두 보기</CommentsAllView>
-      <Comments></Comments>
-      <Date>{date.slice(0, 10)}</Date>
+      <Contents nickname={nickname} content={content} />
     </FooterContainer>
+  );
+}
+
+function Contents({ nickname, content }) {
+  return (
+    <NicknameAndContent>
+      <ContentsNickname>{nickname}yeoreum</ContentsNickname>
+      <Content>{content}</Content>
+    </NicknameAndContent>
   );
 }
 

@@ -10,16 +10,17 @@ import BoardFooter from "./BoardFooter";
 function Boards() {
   const url = `${process.env.REACT_APP_URL}post/all`;
   const [allPostInfo, setAllPostInfo] = useState([]);
-  useEffect(() => {
-    async function getAllPostInfo() {
-      try {
-        const res = await axios.get(url);
-        // console.log(res.data);
-        setAllPostInfo(res.data);
-      } catch (err) {
-        console.log(err);
-      }
+  const getAllPostInfo = async () => {
+    try {
+      const res = await axios.get(url);
+      // console.log(res.data);
+      setAllPostInfo(res.data);
+    } catch (err) {
+      console.log(err);
     }
+  };
+
+  useEffect(() => {
     getAllPostInfo();
   }, []);
 
