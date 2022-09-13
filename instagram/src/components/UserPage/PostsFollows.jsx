@@ -8,13 +8,13 @@ function PostsFollows() {
   return (
     <ListBox>
       <List>
-        게시물<ListNumber>0</ListNumber>
+        게시물<ListNumber>{0}</ListNumber>
       </List>
       <List>
-        팔로워<ListNumber>50</ListNumber>
+        팔로워<ListNumber>{0}</ListNumber>
       </List>
       <List>
-        팔로우<ListNumber>60</ListNumber>
+        팔로우<ListNumber>{0}</ListNumber>
       </List>
     </ListBox>
   );
