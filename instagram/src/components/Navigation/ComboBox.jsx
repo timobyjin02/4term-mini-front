@@ -19,7 +19,7 @@ function debounce (fn, duration) { // fn (콜백함수), duration(지연 시간)
 
 function ComboBox() {
   const [items, setItems] = useState([]);
-  const [complete, setComplete] = useState(false); // 요청 완료
+  const [complete, setComplete] = useState(false);
   const [searchWord, setSearchWord] = useState('');
   const [focus, setFocus] = useState(false); 
   const [loading, setLoading] = useState(false);

@@ -1,5 +1,6 @@
 import React from "react";
 import CommentMenu from "./CommentMenu";
+import Comment from "./Comment";
 import {
   Container,
   Card,
@@ -9,13 +10,12 @@ import {
   Image,
   Liked,
   LikedText,
-  Comments,
   CommentsPost,
-  CommentsAllView,
-  CommentsText,
+  // CommentsAllView,
 } from "../../styles/Comment/MainBoardStyle";
 
 function MainBoard() {
+
   return (
     <Container>
       <Card>
@@ -28,14 +28,14 @@ function MainBoard() {
         <Liked>
           <LikedText>좋아요 4개</LikedText>
         </Liked>
-        <Comments>
-          <CommentsPost>내가 쓴 글</CommentsPost>
-          <CommentsAllView>댓글 모두 보기</CommentsAllView>
-          <CommentsText>댓글들 보임</CommentsText>
-        </Comments>
+        <CommentsPost>좋은 아침</CommentsPost>
+        {/* <CommentsAllView>댓글 모두 보기</CommentsAllView> */}
+          <Comment />
       </Card>
     </Container>
   );
 }
 
 export default MainBoard;
+
+

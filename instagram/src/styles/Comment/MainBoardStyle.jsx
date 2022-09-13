@@ -8,7 +8,7 @@ export const Container = styled.div`
 export const Card = styled.div`
   margin-top: 68px;
   width: 600px;
-  height: 830px;
+  min-height: 830px;
   border: 1px solid ${({ theme }) => theme.palette.borderGrey};
 `;
 export const Header = styled.div`
@@ -50,25 +50,18 @@ export const LikedText = styled.div`
   font-weight: 550;
 `;
 
-export const Comments = styled.div`
-  padding-left: 16px;
-`;
 
 export const CommentsPost = styled.div`
+  padding-left: 16px;
   margin-top: 8px;
   font-size: 13px;
 `;
 
-export const CommentsAllView = styled.div`
-  margin-top: 5px;
-  font-size: 12px;
-  color: #c7c7c7;
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
-export const CommentsText = styled.div`
-  margin-top: 5px;
-  font-size: 12px;
-`;
+// export const CommentsAllView = styled.div`
+//   margin-top: 5px;
+//   font-size: 12px;
+//   color: #c7c7c7;
+//   &:hover {
+//     cursor: pointer;
+//   }
+// `;
