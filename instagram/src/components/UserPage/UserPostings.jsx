@@ -1,15 +1,28 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   PostingBox,
   Posts,
   PostImg,
 } from "../../styles/UserPage/UserPostingsStyle";
-
-const imgArray = [1, 2, 3, 4, 5, 6, 7, 8];
+import { getUserNo } from "../../utils/getToken";
+import axios from "../../api/config";
 
 function UserPostings() {
-  // const reverseArray = [...imgArray].reverse();
-  // const boxCount = Math.ceil(reverseArray.length / 3);
+  const [postData, setPostData] = useState({});
+  const userPost = [];
+  const userNo = getUserNo();
+
+  useEffect(() => {
+    axios.get(`post/profile/${userNo}`).then((res) => {
+      setPostData({ ...res.data });
+    });
+  }, [userNo]);
+
+  for (let value of Object.values(postData)) {
+    userPost.push(value.firstImage);
+  }
+
   const postings = (arr) => {
     const postsData = [];
     const boxCount = Math.ceil(arr.length / 3);
@@ -19,8 +32,8 @@ function UserPostings() {
     }
     return postsData;
   };
-  const posts = postings(imgArray);
-  console.log(posts);
+
+  const posts = postings(userPost);
 
   return (
     <>
@@ -35,7 +48,7 @@ function UserPostings() {
             {paths.map((item) => (
               <Posts key={item.id}>
                 <Link to={item.linkTo}>
-                  {item.data ? <PostImg>{item.data}</PostImg> : null}
+                  {item.data ? <PostImg src={item.data} /> : null}
                 </Link>
               </Posts>
             ))}
