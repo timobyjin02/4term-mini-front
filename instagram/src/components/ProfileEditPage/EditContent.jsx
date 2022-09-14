@@ -44,20 +44,24 @@ function EditContent() {
       });
   };
   return (
-    <Content>
-      <EditProfilePic
-        img={img}
-        setImg={setImg}
-        nickname={nickname}
-        userData={userData}
-        setUserData={setUserData}
-      />
-      <DetailsForm
-        userData={userData}
-        setUserData={setUserData}
-        onSubmit={onSubmit}
-      />
-    </Content>
+    <>
+      {userData ? (
+        <Content>
+          <EditProfilePic
+            img={img}
+            setImg={setImg}
+            nickname={nickname}
+            userData={userData}
+            setUserData={setUserData}
+          />
+          <DetailsForm
+            userData={userData}
+            setUserData={setUserData}
+            onSubmit={onSubmit}
+          />
+        </Content>
+      ) : null}
+    </>
   );
 }
 

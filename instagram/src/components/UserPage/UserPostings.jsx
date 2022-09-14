@@ -12,30 +12,17 @@ function UserPostings() {
     { id: 3, linkTo: "/comments" },
   ];
   return (
-    <PostingBox>
-      {paths.map((item) => (
-        <Posts key={item.id}>
-          <Link to={item.linkTo}>
-            <PostImg />
-          </Link>
-        </Posts>
-      ))}
-      {/* <Posts>
-        <Link to="/comments">
-          <PostImg />
-        </Link>
-      </Posts>
-      <Posts>
-        <Link to="comments">
-          <PostImg />
-        </Link>
-      </Posts>
-      <Posts>
-        <Link to="comments">
-          <PostImg />
-        </Link>
-      </Posts> */}
-    </PostingBox>
+    <>
+      <PostingBox>
+        {paths.map((item) => (
+          <Posts key={item.id}>
+            <Link to={item.linkTo}>
+              <PostImg></PostImg>
+            </Link>
+          </Posts>
+        ))}
+      </PostingBox>
+    </>
   );
 }
 

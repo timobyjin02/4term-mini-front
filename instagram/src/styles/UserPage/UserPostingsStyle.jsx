@@ -2,10 +2,11 @@ import styled from "@emotion/styled";
 
 export const PostingBox = styled.div`
   display: flex;
+  margin-bottom: 20px;
 `;
 
 export const Posts = styled.div`
-  margin-right: 12px;
+  margin-right: 20px;
 `;
 
 export const PostImg = styled.div`
