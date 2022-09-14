@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 
 export const PostingBox = styled.div`
   display: flex;
+  width: 804px;
   margin-bottom: 20px;
 `;
 
