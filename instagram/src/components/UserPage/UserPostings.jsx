@@ -27,8 +27,8 @@ function UserPostings() {
     const postsData = [];
     const boxCount = Math.ceil(arr.length / 3);
     const reverseArr = [...arr].reverse();
-    for (let i = 1; i < boxCount + 1; i++) {
-      postsData[i - 1] = [...reverseArr].splice(i * 3 - 3, 3);
+    for (let i = 0; i < boxCount; i++) {
+      postsData[i] = [...reverseArr].splice(i * 3, 3);
     }
     return postsData;
   };
@@ -39,9 +39,9 @@ function UserPostings() {
     <>
       {posts.map((post, index) => {
         const paths = [
-          { id: `0${index}`, data: post[0], linkTo: "/comments" },
-          { id: `1${index}`, data: post[1], linkTo: "/comments" },
-          { id: `2${index}`, data: post[2], linkTo: "/comments" },
+          { id: `${index}0`, data: post[0], linkTo: "/comments" },
+          { id: `${index}1`, data: post[1], linkTo: "/comments" },
+          { id: `${index}2`, data: post[2], linkTo: "/comments" },
         ];
         return (
           <PostingBox key={paths[0].id}>
@@ -55,16 +55,6 @@ function UserPostings() {
           </PostingBox>
         );
       })}
-
-      {/* <PostingBox>
-        {paths.map((item) => (
-          <Posts key={item.id}>
-            <Link to={item.linkTo}>
-              <PostImg>{}</PostImg>
-            </Link>
-          </Posts>
-        ))}
-      </PostingBox> */}
     </>
   );
 }
