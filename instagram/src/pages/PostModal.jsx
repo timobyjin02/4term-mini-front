@@ -36,7 +36,7 @@ function PostModal({ setShowModal }) {
     <>
       {selected ? (
         <Container>
-          <PostAfterSelect imgSrc={imgSrc} />
+          <PostAfterSelect imgSrc={imgSrc} setShowModal={setShowModal} />
         </Container>
       ) : (
         <Container>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { getToken, getUserNo } from "../../utils/getToken";
 import {
   Container,
   SelectedImg,
@@ -12,12 +13,11 @@ import {
   SubmitBtn,
 } from "../../styles/Post/PostAfterSelectStyle";
 
-function PostAfterSelect({ imgSrc }) {
+function PostAfterSelect({ imgSrc, setShowModal }) {
   const [content, setContent] = useState("");
   const onSubmit = async () => {
-    const url = "";
-    const userNo = 37;
-    const token = "";
+    const url = `${process.env.REACT_APP_URL}post`;
+    const userNo = getUserNo();
     const formData = new FormData();
     formData.append("userNo", userNo);
     formData.append("content", content);
@@ -27,7 +27,7 @@ function PostAfterSelect({ imgSrc }) {
     const config = {
       headers: {
         "Content-Type": "multipart/form-data",
-        authorization: token,
+        authorization: getToken(),
       },
     };
 
@@ -40,6 +40,8 @@ function PostAfterSelect({ imgSrc }) {
     try {
       let response = await axios.post(url, formData, config);
       console.log(response.data.msg);
+      setShowModal(false);
+      window.location.reload();
     } catch (err) {
       console.log(err);
     }
