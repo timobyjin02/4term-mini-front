@@ -14,5 +14,7 @@ export const Wrap = styled.div`
 export const ProfileImage = styled.img`
   padding: 0 1 rem;
   width: 24px;
-  cursor: pointer;
+  height: 24px;
+  border-radius: 50px;
+  object-fit: cover;
 `;

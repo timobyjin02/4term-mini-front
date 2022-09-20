@@ -9,11 +9,10 @@ import {
   Header,
   H1,
 } from "../styles/Post/PostModalStyle";
+import { useEffect } from "react";
 
-function PostModal({ setShowModal }) {
+function PostModal({ setShowModal, myProfileImg }) {
   const [imgSrc, setImgSrc] = useState({ files: [], URLForShow: "" });
-
-  // const [imgSrc, setImgSrc] = useState("");
   const [selected, setSelected] = useState(false);
   const onClose = () => setShowModal(false);
   const stopBubble = (e) => e.stopPropagation();
@@ -32,11 +31,19 @@ function PostModal({ setShowModal }) {
     </Background>
   );
 
+  useEffect(() => {
+    document.body.style = `overflow:hidden`;
+    return () => (document.body.style = `overflow:auto`);
+  }, []);
   return (
     <>
       {selected ? (
         <Container>
-          <PostAfterSelect imgSrc={imgSrc} />
+          <PostAfterSelect
+            imgSrc={imgSrc}
+            setShowModal={setShowModal}
+            myProfileImg={myProfileImg}
+          />
         </Container>
       ) : (
         <Container>

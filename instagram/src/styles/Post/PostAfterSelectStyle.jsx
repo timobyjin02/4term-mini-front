@@ -2,8 +2,6 @@ import styled from "@emotion/styled";
 
 export const Container = styled.div`
   display: flex;
-  /* justify-content: center;
-align-items: center; */
   height: 100%;
 `;
 
@@ -18,9 +16,6 @@ export const Wrap = styled.div`
   width: 339px;
   height: 100%;
   margin: 0px 10px;
-
-  /* justify-content: center;
-align-items: center; */
 `;
 
 export const UserInfo = styled.div`
@@ -30,11 +25,11 @@ export const UserInfo = styled.div`
   height: 60px;
 `;
 
-export const UserImage = styled.div`
+export const UserImage = styled.img`
   width: 32px;
   height: 32px;
-  background: lightgray;
   border-radius: 50px;
+  object-fit: cover;
 `;
 
 export const Nickname = styled.div`
