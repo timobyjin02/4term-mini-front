@@ -11,7 +11,7 @@ import {
 } from "../styles/Post/PostModalStyle";
 import { useEffect } from "react";
 
-function PostModal({ setShowModal }) {
+function PostModal({ setShowModal, myProfileImg }) {
   const [imgSrc, setImgSrc] = useState({ files: [], URLForShow: "" });
   const [selected, setSelected] = useState(false);
   const onClose = () => setShowModal(false);
@@ -39,7 +39,11 @@ function PostModal({ setShowModal }) {
     <>
       {selected ? (
         <Container>
-          <PostAfterSelect imgSrc={imgSrc} setShowModal={setShowModal} />
+          <PostAfterSelect
+            imgSrc={imgSrc}
+            setShowModal={setShowModal}
+            myProfileImg={myProfileImg}
+          />
         </Container>
       ) : (
         <Container>

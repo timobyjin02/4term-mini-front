@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { getToken, getUserNo } from "../../utils/getToken";
+import { getToken, getUserNo, getUserNickname } from "../../utils/getToken";
 import {
   Container,
   SelectedImg,
@@ -13,7 +13,7 @@ import {
   SubmitBtn,
 } from "../../styles/Post/PostAfterSelectStyle";
 
-function PostAfterSelect({ imgSrc, setShowModal }) {
+function PostAfterSelect({ imgSrc, setShowModal, myProfileImg }) {
   const [content, setContent] = useState("");
   const onSubmit = async () => {
     const url = `${process.env.REACT_APP_URL}post`;
@@ -31,15 +31,8 @@ function PostAfterSelect({ imgSrc, setShowModal }) {
       },
     };
 
-    // test
-    // console.log(formData.getAll("images"));
-    // for (let pair of formData.entries()) {
-    //   console.log(pair[0], "+", pair[1]);
-    // }
-
     try {
-      let response = await axios.post(url, formData, config);
-      console.log(response.data.msg);
+      await axios.post(url, formData, config);
       setShowModal(false);
       window.location.reload();
     } catch (err) {
@@ -51,14 +44,13 @@ function PostAfterSelect({ imgSrc, setShowModal }) {
     setContent(e.target.value);
   };
 
-  const [userId, setUserId] = useState("bang");
   return (
     <Container>
       <SelectedImg src={imgSrc.URLForShow} />
       <Wrap>
         <UserInfo>
-          <UserImage />
-          <Nickname>{userId}</Nickname>
+          <UserImage src={myProfileImg} />
+          <Nickname>{getUserNickname()}</Nickname>
         </UserInfo>
         <Content onChange={onChangeContents}>
           <Input placeholder="문구 입력..." />

@@ -21,10 +21,14 @@ function Menu() {
 
   const getMyProfileImg = async () => {
     const userNo = getUserNo();
-    const URL = `${process.env.REACT_APP_URL}user/profileImg/42`;
+    const URL = `${process.env.REACT_APP_URL}user/profileImg/${userNo}`;
     const res = await axios.get(URL);
-    setMyProfileImg(res.data);
-    console.log(res);
+
+    if (res.data.isProfileImg) {
+      setMyProfileImg(res.data);
+    } else {
+      setMyProfileImg({ isProfileImg: false, profileImg: "/img/profile.png" });
+    }
   };
 
   useEffect(() => {
@@ -36,16 +40,17 @@ function Menu() {
         <Home className="icon" />
       </Link>
       <Post onClick={openModal} className="icon" />
-      {showModal ? <PostModal setShowModal={setShowModal} /> : null}
+      {showModal ? (
+        <PostModal
+          setShowModal={setShowModal}
+          myProfileImg={myProfileImg.profileImg}
+        />
+      ) : null}
       <Link to="/explore">
         <Notification className="icon" />
       </Link>
       <Link to={`/${nickname}`}>
-        {myProfileImg.isProfileImg ? (
-          <ProfileImage alt="profile image" src={myProfileImg.profileImg} />
-        ) : (
-          <ProfileImage alt="profile image" src="/img/profile.png" />
-        )}
+        <ProfileImage alt="profile image" src={myProfileImg.profileImg} />
       </Link>
     </Wrap>
   );
