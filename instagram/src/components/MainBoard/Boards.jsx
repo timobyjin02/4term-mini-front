@@ -27,7 +27,6 @@ function Boards() {
   const rendering = () => {
     const result = [];
     for (let i = 1; i < allPostInfo.length; i++) {
-      // console.log(allPostInfo[i]);
       let postInfo = allPostInfo[allPostInfo.length - i];
       result.push(
         <span key={postInfo.postNo}>
@@ -41,11 +40,14 @@ function Boards() {
 }
 
 function Board({ postInfo }) {
-  console.log(postInfo);
   return (
     <BoardsContainer>
       <BoardsWrap>
-        <BoardBody nickname={postInfo.nickname} images={postInfo.images} />
+        <BoardBody
+          profileImage={postInfo.profileImage}
+          nickname={postInfo.nickname}
+          images={postInfo.images}
+        />
         <BoardFooter
           nickname={postInfo.nickname}
           content={postInfo.content}

@@ -23,7 +23,7 @@ function BoardFooter({ nickname, content }) {
 function Contents({ nickname, content }) {
   return (
     <NicknameAndContent>
-      <ContentsNickname>{nickname}yeoreum</ContentsNickname>
+      <ContentsNickname>{nickname}</ContentsNickname>
       <Content>{content}</Content>
     </NicknameAndContent>
   );

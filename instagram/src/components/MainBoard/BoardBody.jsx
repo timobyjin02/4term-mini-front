@@ -6,12 +6,15 @@ import {
   Image,
 } from "../../styles/MainBoard/MainBoardStyle";
 
-function BoardBody({ nickname, images }) {
-  console.log(images);
+function BoardBody({ profileImage, nickname, images }) {
   return (
     <>
       <Header>
-        <ProfileImage alt="profile image" src="img/profile.png" />
+        {profileImage ? (
+          <ProfileImage alt="profile image" src={profileImage} />
+        ) : (
+          <ProfileImage alt="profile image" src="/img/profile.png" />
+        )}
         <UserId>{nickname}</UserId>
       </Header>
       <Image src={images[0]}></Image>
