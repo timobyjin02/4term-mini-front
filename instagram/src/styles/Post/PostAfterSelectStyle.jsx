@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Container = styled.div`
+  position: relative;
   display: flex;
   height: 100%;
 `;
@@ -49,12 +50,14 @@ export const Input = styled.textarea`
 
 export const SubmitBtn = styled.button`
   ${({ theme }) => `
-  height: 20px;
-  margin: 10px 5px;
   background: ${theme.palette.backgroundWhite};
   color: ${theme.palette.btn};
+  `}
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  height: 20px;
+  margin: 10px 5px;
   font-weight: bold;
   font-size: 1em;
-  align-self: flex-end;
-  `}
 `;
