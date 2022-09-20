@@ -20,7 +20,7 @@ function UserPostings() {
   }, [userNo]);
 
   for (let value of Object.values(postData)) {
-    userPost.push(value.firstImage);
+    userPost.push(value);
   }
 
   const postings = (arr) => {
@@ -39,9 +39,21 @@ function UserPostings() {
     <>
       {posts.map((post, index) => {
         const paths = [
-          { id: `${index}0`, data: post[0], linkTo: "/comments" },
-          { id: `${index}1`, data: post[1], linkTo: "/comments" },
-          { id: `${index}2`, data: post[2], linkTo: "/comments" },
+          {
+            id: `${index}0`,
+            data: post[0]?.firstImage,
+            linkTo: `/p/${post[0]?.postNo}`,
+          },
+          {
+            id: `${index}1`,
+            data: post[1]?.firstImage,
+            linkTo: `/p/${post[1]?.postNo}`,
+          },
+          {
+            id: `${index}2`,
+            data: post[2]?.firstImage,
+            linkTo: `/p/${post[2]?.postNo}`,
+          },
         ];
         return (
           <PostingBox key={paths[0].id}>

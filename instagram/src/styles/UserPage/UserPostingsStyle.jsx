@@ -14,4 +14,7 @@ export const PostImg = styled.img`
   width: 248px;
   height: 248px;
   background-color: lightgray;
+  &:hover {
+    filter: brightness(70%);
+  }
 `;
