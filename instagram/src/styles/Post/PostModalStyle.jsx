@@ -11,6 +11,7 @@ export const ExitBtnWrap = styled.button`
 
 export const Background = styled.div`
   position: fixed;
+  z-index: 2;
   top: 0;
   right: 0;
   bottom: 0;
