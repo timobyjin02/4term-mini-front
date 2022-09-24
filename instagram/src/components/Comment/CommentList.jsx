@@ -1,19 +1,20 @@
-import { Nickname, Comment, CommentsText} from "../../styles/Comment/CommentList";
+import { Comment, CommentsText } from "../../styles/Comment/CommentList";
 
-function CommentList({nickname, commentArray}) {
-
+function CommentList({ commentArray }) {
   return (
     <>
-    {commentArray.map((comment, index) => {
-      return (
-        <CommentsText key={index} >
-          <Comment><b>{nickname}</b>{comment}</Comment>
+      {commentArray.map((comment, index) => {
+        return (
+          <CommentsText key={index}>
+            <Comment>
+              <b>{comment.nickname}</b>
+              {comment.content}
+            </Comment>
           </CommentsText>
-      )
-    })}
+        );
+      })}
     </>
-  )
+  );
 }
 
 export default CommentList;
-

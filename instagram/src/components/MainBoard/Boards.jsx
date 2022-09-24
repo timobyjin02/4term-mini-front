@@ -48,6 +48,7 @@ function Board({ postInfo }) {
         <BoardBody nickname={postInfo.nickname} images={postInfo.images} />
         <BoardFooter
           nickname={postInfo.nickname}
+          postNo={postInfo.postNo}
           content={postInfo.content}
           date={postInfo.date}
         />
