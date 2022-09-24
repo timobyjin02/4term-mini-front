@@ -7,20 +7,19 @@ import {
 } from "../../styles/Comment/Comment";
 
 
-function Comment() {
-  const [commentArray, setCommentArray] = useState([]
-    // { id:'유진', comments: comments},
-  );
+function Comment({nickname}) {
+  const [commentArray, setCommentArray] = useState([]);
 
   const addHandler = (value) => {
     setCommentArray(prevState => ([...prevState, value]))
 
   }
 
+  // console.log(nickname)
   return (
     <Wrapper>
       {/* 아이디 불러와야함 */}
-      <CommentList commentArray={commentArray} />
+      <CommentList nickname={nickname} commentArray={commentArray} />
       <Container>
       <CommentInput onAdd={addHandler}/>
       </Container>

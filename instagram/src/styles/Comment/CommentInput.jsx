@@ -3,16 +3,12 @@ import styled from "@emotion/styled";
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
-  /* padding-top: 10px; */
-  .icon {
-    margin-top: 5px;
-  }
+  padding: 12px;
 `
 
 export const InputBox = styled.input`
   width: 100%;
-  padding-top: 5px;
-  padding-left: 5px;
+  padding-left: 12px;
   display: flex;
   align-items: center;
   font-size: 12px;
