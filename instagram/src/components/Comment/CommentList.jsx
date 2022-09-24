@@ -1,4 +1,5 @@
 import { Comment, CommentsText } from "../../styles/Comment/CommentList";
+import { ReactComponent as Ellipsis } from "../../assets/ellipsis.svg";
 
 function CommentList({ commentArray }) {
   return (
@@ -10,6 +11,7 @@ function CommentList({ commentArray }) {
               <b>{comment.nickname}</b>
               {comment.content}
             </Comment>
+            <Ellipsis onClick={() => {}} className="icon" />
           </CommentsText>
         );
       })}

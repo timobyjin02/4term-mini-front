@@ -6,8 +6,11 @@ import {
 } from "../../styles/MainBoard/MainBoardStyle";
 import BoardBody from "./BoardBody";
 import BoardFooter from "./BoardFooter";
+import Modal from "../Comment/Modal";
 
 function Boards() {
+  const [deleteCommentNo, setDeleteCommentNo] = useState(null);
+  const [modalToggle, setModalToggle] = useState(false);
   const url = `${process.env.REACT_APP_URL}post/all`;
   const [allPostInfo, setAllPostInfo] = useState([]);
   const getAllPostInfo = async () => {
@@ -37,7 +40,12 @@ function Boards() {
     }
     return result;
   };
-  return <>{allPostInfo.length ? rendering() : null}</>;
+  return (
+    <>
+      {allPostInfo.length ? rendering() : null}
+      <Modal modalToggle={modalToggle} onClose={() => setModalToggle(false)} />
+    </>
+  );
 }
 
 function Board({ postInfo }) {
