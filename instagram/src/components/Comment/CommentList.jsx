@@ -1,7 +1,7 @@
 import { Comment, CommentsText } from "../../styles/Comment/CommentList";
 import { ReactComponent as Ellipsis } from "../../assets/ellipsis.svg";
 
-function CommentList({ commentArray }) {
+function CommentList({ commentArray, onShowModal }) {
   return (
     <>
       {commentArray.map((comment, index) => {
@@ -11,7 +11,10 @@ function CommentList({ commentArray }) {
               <b>{comment.nickname}</b>
               {comment.content}
             </Comment>
-            <Ellipsis onClick={() => {}} className="icon" />
+            <Ellipsis
+              onClick={() => onShowModal(comment.commentNo)}
+              className="icon"
+            />
           </CommentsText>
         );
       })}

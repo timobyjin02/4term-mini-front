@@ -7,7 +7,7 @@ import { getToken, getUserNickname, getUserNo } from "../../utils/getToken";
 import { useEffect } from "react";
 import catchGlobalError from "../../utils/catchGlobalError";
 
-function Comment({ postNo }) {
+function Comment({ postNo, onShowModal }) {
   const [commentArray, setCommentArray] = useState([]);
 
   const addHandler = async value => {
@@ -69,6 +69,12 @@ function Comment({ postNo }) {
       catchGlobalError(err);
     }
   };
+
+  const onShowModalMiddleware = commentNo => {
+    // getComment가 comment.jsx에서 밖에 정의를 할 수 없어서 middleware를 사용해서 기능을 정의함
+    onShowModal(commentNo, getComment);
+  };
+
   useEffect(() => {
     getComment();
   }, []);
@@ -76,7 +82,10 @@ function Comment({ postNo }) {
   return (
     <Wrapper>
       {/* 아이디 불러와야함 */}
-      <CommentList commentArray={commentArray} />
+      <CommentList
+        commentArray={commentArray}
+        onShowModal={onShowModalMiddleware}
+      />
       <Container>
         <CommentInput onAdd={addHandler} />
       </Container>

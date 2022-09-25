@@ -1,11 +1,11 @@
 import { Frame, Background, Contents, Item } from "../../styles/Comment/Modal";
 
-function Modal({ modalToggle, onClose }) {
+function Modal({ modalToggle, onClose, onDeleteComment }) {
   return (
     <Frame modalToggle={modalToggle}>
       <Background onClick={onClose} />
       <Contents>
-        <Item>삭제</Item>
+        <Item onClick={onDeleteComment}>삭제</Item>
       </Contents>
     </Frame>
   );
