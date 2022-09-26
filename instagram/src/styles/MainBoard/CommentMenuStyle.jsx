@@ -7,7 +7,7 @@ export const CardMenu = styled.div`
   justify-content: space-between;
   align-items: center;
   .icon {
-    margin-right: 1em;
+    margin-right: 16px;
     width: 24px;
     height: 24px;
 
@@ -20,6 +20,7 @@ export const CardMenu = styled.div`
 export const Interactions = styled.div`
   width: 112px;
   height: 52px;
+  margin-left: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;

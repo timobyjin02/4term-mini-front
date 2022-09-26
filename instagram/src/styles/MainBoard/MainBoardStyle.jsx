@@ -49,6 +49,7 @@ export const Image = styled.img`
 `;
 
 export const LikeWrap = styled.div`
+  margin-left: 12px;
   display: flex;
   &:hover {
     cursor: pointer;
@@ -61,10 +62,11 @@ export const LikeText = styled.p`
 `;
 
 export const FooterContainer = styled.div`
-  padding: 0px 0px 16px 16px;
+  
 `;
 
 export const NicknameAndContent = styled.div`
+  margin-left: 12px;
   display: flex;
   width: 100%;
 `;

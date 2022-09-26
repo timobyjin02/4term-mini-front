@@ -6,7 +6,7 @@ import {
   ImgLogo,
 } from "../../styles/User/LoginPageStyle";
 import LoginInputText from "./Input";
-import { LoginBtn } from "./Button";
+import  LoginBtn  from "./Button";
 import KakaoLogin from "./KakaoLogin";
 
 function LoginBody() {

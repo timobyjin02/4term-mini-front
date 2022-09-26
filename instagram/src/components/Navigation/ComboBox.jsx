@@ -1,7 +1,7 @@
 import axios from '../../api/config';
 import React from 'react';
-import styled from '@emotion/styled';
 import { ReactComponent as SearchIcon } from "../../assets/searchIcon.svg";
+import { InputWrapper, Wrapper } from "../../styles/Navigation/ComboBox";
 import { useState } from 'react';
 import { useCallback } from 'react';
 import ComboBoxList from './ComboBoxList';
@@ -19,7 +19,7 @@ function debounce (fn, duration) { // fn (콜백함수), duration(지연 시간)
 
 function ComboBox() {
   const [items, setItems] = useState([]);
-  const [complete, setComplete] = useState(false); // 요청 완료
+  const [complete, setComplete] = useState(false);
   const [searchWord, setSearchWord] = useState('');
   const [focus, setFocus] = useState(false); 
   const [loading, setLoading] = useState(false);
@@ -67,25 +67,3 @@ function ComboBox() {
 
 export default ComboBox;
 
-const InputWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  .search {
-    margin-right: 0.3em;
-  }
-  input {
-    flex: 1;
-    outline: none;
-    border: none;
-    background-color: ${({ theme }) => theme.palette.searchBg};
-  }
-  
-`
-
-const Wrapper = styled.label`
-  position: relative;
-  border-radius: 3px;
-  background-color: ${({ theme }) => theme.palette.searchBg};
-  min-width: 200px;
-  padding: 6px;
-`;
