@@ -24,15 +24,21 @@ export const Header = styled.div`
 `;
 
 export const ProfileImage = styled.img`
-  padding-left: 16px;
-  width: 40px;
+  margin-left: 12px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid ${({ theme }) => theme.palette.borderGrey};
+  border-radius: 50px;
+  object-fit: cover;
   &:hover {
     cursor: pointer;
   }
 `;
 
 export const UserId = styled.p`
-  padding-left: 12px;
+  padding-left: 8px;
+  font-weight: 500;
+  font-size: 0.9em;
 `;
 
 export const Image = styled.img`

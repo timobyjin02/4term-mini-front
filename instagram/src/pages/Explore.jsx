@@ -2,8 +2,7 @@ import axios from "axios";
 import { Body, Container } from "../styles/Explore/ExploreStyle";
 import Navigation from "./Navigation";
 import Images from "../components/Explore/ExploreImageRender";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Explore() {
   const url = `${process.env.REACT_APP_URL}post/all`;

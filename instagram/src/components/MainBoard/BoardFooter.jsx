@@ -25,7 +25,7 @@ function BoardFooter({ nickname, postNo, content, onShowModal }) {
 function Contents({ nickname, content }) {
   return (
     <NicknameAndContent>
-      <ContentsNickname>{nickname}yeoreum</ContentsNickname>
+      <ContentsNickname>{nickname}</ContentsNickname>
       <Content>{content}</Content>
     </NicknameAndContent>
   );
