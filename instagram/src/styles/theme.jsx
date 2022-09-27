@@ -7,6 +7,8 @@ const palette = {
   btn: "#0099FF",
   btnHover: "#5EA1EF",
   searchBg: "#EFEFEF",
+  commentBtn:"#C6DFFA",
+  commentBtnActive: "#4193EF",
   modalBackground: "rgba(0, 0, 0, 0.64)",
 };
 

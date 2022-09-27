@@ -1,5 +1,5 @@
 import axios, { setHeader } from '../../api/config';
-import styled from "@emotion/styled";
+import { ImgBtn } from "../../styles/User/KakaoImg";
 import { useNavigate } from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux'
 
@@ -54,8 +54,3 @@ function KakaoLogin() {
 
 export default KakaoLogin;
 
-const ImgBtn = styled.img`
-  margin-top: 10px;
-  width: 100px;
-  cursor: pointer;
-`;

@@ -1,11 +1,12 @@
 import Navigation from "./Navigation";
-import MainBoard from "../components/MainBoard";
+import Boards from "../components/MainBoard/Boards";
+
 
 function MainPage() {
   return (
     <>
       <Navigation />
-      <MainBoard />
+      <Boards />
     </>
   );
 }
