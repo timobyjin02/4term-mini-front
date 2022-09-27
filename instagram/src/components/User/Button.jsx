@@ -1,5 +1,5 @@
 import React, { children } from 'react';
-import styled from '@emotion/styled';
+import { LoginBtn } from "../../styles/User/Button";
 
 function Button({children, ...props}) {
   return (
@@ -9,19 +9,3 @@ function Button({children, ...props}) {
 
 export default Button;
 
-export const LoginBtn = styled.button`
-  width: 268px;
-  height: 30px;
-  margin-top: 6px;
-  padding: 0;
-  background-color: ${({ theme }) => theme.palette.btn};
-  color: ${({ theme }) => theme.palette.backgroundWhite};
-  border: none;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
-  &:disabled {
-    color: #cecece;
-  }
-`;

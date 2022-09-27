@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from '@emotion/styled';
+import { LoginInputText } from "../../styles/User/Input";
 
 function Input({...props}) {
 
@@ -12,16 +12,3 @@ function Input({...props}) {
 
 export default Input;
 
-const LoginInputText = styled.input`
-  box-sizing: border-box;
-  width: 268px;
-  height: 38px;
-  border: 1px solid ${({ theme }) => theme.palette.borderGrey};
-  outline: none;
-  border-radius: 4px;
-  margin-bottom: 5px;
-  padding: 11px 8px;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 15px;
-`;
