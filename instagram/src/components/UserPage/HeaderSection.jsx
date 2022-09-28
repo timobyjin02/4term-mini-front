@@ -5,11 +5,11 @@ import {
   UserName,
 } from "../../styles/UserPage/HeaderSectionStyle";
 
-function HeaderSection({ userName, userNickname }) {
+function HeaderSection({ userName, userNickname, postData }) {
   return (
     <HeaderContainer>
       <IdEditGear userNickname={userNickname} />
-      <PostsFollows />
+      <PostsFollows postData={postData} />
       <UserName>{`${userName}`}</UserName>
     </HeaderContainer>
   );

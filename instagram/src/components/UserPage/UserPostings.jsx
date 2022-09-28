@@ -1,23 +1,12 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   PostingBox,
   Posts,
   PostImg,
 } from "../../styles/UserPage/UserPostingsStyle";
-import { getUserNo } from "../../utils/getToken";
-import axios from "../../api/config";
 
-function UserPostings() {
-  const [postData, setPostData] = useState({});
+function UserPostings({ postData }) {
   const userPost = [];
-  const userNo = getUserNo();
-
-  useEffect(() => {
-    axios.get(`post/profile/${userNo}`).then((res) => {
-      setPostData({ ...res.data });
-    });
-  }, [userNo]);
 
   for (let value of Object.values(postData)) {
     userPost.push(value);
