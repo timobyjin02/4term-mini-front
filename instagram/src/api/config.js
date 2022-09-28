@@ -3,7 +3,7 @@ import { getToken } from "../utils/getToken";
 
 const instance = axios.create({
   baseURL: `${process.env.REACT_APP_URL}`,
-  headers: { authorization: getToken() },
+  headers: { Authorization: getToken() },
 });
 
 export const setHeader = () => {
