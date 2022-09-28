@@ -3,7 +3,6 @@ import HeaderSection from "./HeaderSection";
 import { HeaderContainer } from "../../styles/UserPage/UserHeaderStyle";
 import { useEffect, useState } from "react";
 import axios from "../../api/config";
-// import axios from "axios";
 
 function UserHeader({ userNo, postData }) {
   const [userInfo, setUserInfo] = useState({});
@@ -12,11 +11,6 @@ function UserHeader({ userNo, postData }) {
     axios.get(`user/profile/${userNo}`).then((res) => {
       setUserInfo({ ...res.data.userInfo });
     });
-    // axios.get(`${process.env.REACT_APP_URL}user/profile/${userNo}`,{
-    //   headers:{
-    //     authorization:
-    //   }
-    // })
   }, [userNo]);
 
   return (
