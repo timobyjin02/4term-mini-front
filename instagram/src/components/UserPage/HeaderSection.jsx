@@ -5,12 +5,12 @@ import {
   UserName,
 } from "../../styles/UserPage/HeaderSectionStyle";
 
-function HeaderSection() {
+function HeaderSection({ userName, userNickname, postData }) {
   return (
     <HeaderContainer>
-      <IdEditGear />
-      <PostsFollows />
-      <UserName>이름</UserName>
+      <IdEditGear userNickname={userNickname} />
+      <PostsFollows postData={postData} />
+      <UserName>{`${userName}`}</UserName>
     </HeaderContainer>
   );
 }
