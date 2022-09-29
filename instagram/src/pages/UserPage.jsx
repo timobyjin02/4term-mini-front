@@ -14,6 +14,8 @@ function UserPage() {
   const userNickname = getUserNickname();
   const [isMyPage, setIsMyPage] = useState(false);
   const [postData, setPostData] = useState({});
+  const [userInfo, setUserInfo] = useState({});
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     if (nickname === userNickname) setIsMyPage(true);
@@ -22,20 +24,33 @@ function UserPage() {
     });
   }, [userNo, nickname, userNickname]);
 
+  useEffect(() => {
+    axios.get(`user/profile/${userNo}`).then((res) => {
+      setUserInfo({ ...res.data.userInfo });
+    });
+    if (!(userInfo.name && userInfo.nickname === undefined)) setIsLoaded(true);
+  }, [userNo, userInfo.name, userInfo.nickname]);
+
   return (
     <>
-      {isMyPage ? (
-        <>
-          <Navigation />
-          <Container>
-            <UserHeader userNo={userNo} postData={postData} />
-            <HeaderBaseline />
-            <UserPostings postData={postData} />
-          </Container>
-        </>
-      ) : (
-        <div>남의 페이지다</div>
-      )}
+      {isLoaded ? (
+        isMyPage ? (
+          <>
+            <Navigation />
+            <Container>
+              <UserHeader
+                userInfo={userInfo}
+                isLoaded={isLoaded}
+                postData={postData}
+              />
+              <HeaderBaseline />
+              <UserPostings postData={postData} />
+            </Container>
+          </>
+        ) : (
+          <div>{`${nickname}`}의 페이지다</div>
+        )
+      ) : null}
     </>
   );
 }
