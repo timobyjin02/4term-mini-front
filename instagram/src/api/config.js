@@ -6,6 +6,18 @@ const instance = axios.create({
   headers: { Authorization: getToken() },
 });
 
+instance.interceptors.request.use(
+  (config) => {
+    if (config.url.slice(0, 13) === "user/profile/") {
+      config.headers["Authorization"] = getToken();
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
 export const setHeader = () => {
   // axios 헤더에 token을 넣어준다
   instance.defaults.headers.common["Authorization"] = getToken();
