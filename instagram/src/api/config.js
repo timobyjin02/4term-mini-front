@@ -3,14 +3,11 @@ import { getToken } from "../utils/getToken";
 
 const instance = axios.create({
   baseURL: `${process.env.REACT_APP_URL}`,
-  headers: { Authorization: getToken() },
 });
 
 instance.interceptors.request.use(
   (config) => {
-    if (config.url.slice(0, 13) === "user/profile/") {
-      config.headers["Authorization"] = getToken();
-    }
+    config.headers["Authorization"] = getToken();
     return config;
   },
   (error) => {

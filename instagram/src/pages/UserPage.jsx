@@ -28,7 +28,8 @@ function UserPage() {
     axios.get(`user/profile/${userNo}`).then((res) => {
       setUserInfo({ ...res.data.userInfo });
     });
-    if (!(userInfo.name && userInfo.nickname === undefined)) setIsLoaded(true);
+    if (!(userInfo.name === undefined && userInfo.nickname === undefined))
+      setIsLoaded(true);
   }, [userNo, userInfo.name, userInfo.nickname]);
 
   return (
