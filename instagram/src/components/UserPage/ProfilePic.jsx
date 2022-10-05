@@ -3,11 +3,11 @@ import {
   ProfilePicture,
 } from "../../styles/UserPage/ProfilePicStyle";
 
-function ProfilePic() {
+function ProfilePic({ profileImg }) {
   return (
     <PictureBox>
       {/* 사진 박스 */}
-      <ProfilePicture />
+      <ProfilePicture src={profileImg} />
     </PictureBox>
   );
 }

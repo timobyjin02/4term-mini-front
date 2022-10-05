@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const Baseline = styled.div`
   width: 935px;
-  height: 55px;
+  min-height: 55px;
   border-bottom: 1px solid #dbdbdb;
 `;
 

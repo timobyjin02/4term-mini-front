@@ -3,8 +3,17 @@ import { getToken } from "../utils/getToken";
 
 const instance = axios.create({
   baseURL: `${process.env.REACT_APP_URL}`,
-  headers: { authorization: getToken() },
 });
+
+instance.interceptors.request.use(
+  (config) => {
+    config.headers["Authorization"] = getToken();
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
 
 export const setHeader = () => {
   // axios 헤더에 token을 넣어준다
