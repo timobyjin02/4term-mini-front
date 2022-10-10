@@ -9,14 +9,23 @@ import {
   EditBtn,
 } from "../../styles/UserPage/IdEditGearStyle";
 
-function IdEditGear({ userNickname }) {
+function IdEditGear({ isMyPage, userNickname }) {
   return (
-    <IdEditGearBox>
-      {/* 유저네임, 프로필편집버튼, 톱니바퀴 */}
-      <Nickname>{`${userNickname}`}</Nickname>
-      <EditButton />
-      <Gear />
-    </IdEditGearBox>
+    <>
+      {isMyPage ? (
+        <IdEditGearBox>
+          {/* 유저네임, 프로필편집버튼, 톱니바퀴 */}
+          <Nickname>{`${userNickname}`}</Nickname>
+          <EditButton />
+          <Gear />
+        </IdEditGearBox>
+      ) : (
+        <IdEditGearBox>
+          {/* 유저네임, 프로필편집버튼, 톱니바퀴 */}
+          <Nickname>{`${userNickname}`}</Nickname>
+        </IdEditGearBox>
+      )}
+    </>
   );
 }
 
