@@ -32,6 +32,46 @@ function UserPage() {
       setIsLoaded(true);
   }, [userNo, userInfo.name, userInfo.nickname]);
 
+  const OtherPage = () => {
+    const [otherNo, setOtherNo] = useState(null);
+    const [otherPost, setOtherPost] = useState({});
+    const [otherInfo, setOtherInfo] = useState({});
+    useEffect(() => {
+      (async () => {
+        const {
+          data: { user },
+        } = await axios.get(`user/search/${nickname}`);
+        setOtherNo(user[0].no);
+      })();
+    }, []);
+
+    useEffect(() => {
+      axios.get(`post/profile/41`).then((res) => setOtherPost({ ...res.data }));
+      axios
+        .get(`user/profile/${otherNo}`)
+        .then((res) => setOtherInfo({ ...res.data.userinfo }));
+    }, [otherNo]);
+
+    return (
+      <>
+        {!(otherInfo.name === undefined && otherInfo.nickname === undefined) ? (
+          <>
+            <Navigation />
+            <Container>
+              <UserHeader
+                isMyPage={isMyPage}
+                userInfo={otherInfo}
+                postData={otherPost}
+              />
+              <HeaderBaseline />
+              <UserPostings postData={otherPost} />
+            </Container>
+          </>
+        ) : null}
+      </>
+    );
+  };
+
   return (
     <>
       {isLoaded ? (
@@ -40,8 +80,8 @@ function UserPage() {
             <Navigation />
             <Container>
               <UserHeader
+                isMyPage={isMyPage}
                 userInfo={userInfo}
-                isLoaded={isLoaded}
                 postData={postData}
               />
               <HeaderBaseline />
@@ -49,7 +89,7 @@ function UserPage() {
             </Container>
           </>
         ) : (
-          <div>{`${nickname}`}의 페이지다</div>
+          <OtherPage />
         )
       ) : null}
     </>
