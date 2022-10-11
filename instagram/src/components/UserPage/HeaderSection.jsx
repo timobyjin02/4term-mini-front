@@ -5,12 +5,12 @@ import {
   UserName,
 } from "../../styles/UserPage/HeaderSectionStyle";
 
-function HeaderSection({ userName, userNickname, postData }) {
+function HeaderSection({ isMyPage, userName, userNickname, postData }) {
   return (
     <HeaderContainer>
-      <IdEditGear userNickname={userNickname} />
+      <IdEditGear isMyPage={isMyPage} userNickname={userNickname} />
       <PostsFollows postData={postData} />
-      <UserName>{`${userName}`}</UserName>
+      <UserName>{userName ? `${userName}` : "이름 없음"}</UserName>
     </HeaderContainer>
   );
 }
