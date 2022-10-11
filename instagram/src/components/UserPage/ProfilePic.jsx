@@ -8,7 +8,11 @@ function ProfilePic({ profileImg }) {
     <PictureBox>
       {/* 사진 박스 */}
       <ProfilePicture
-        src={profileImg ? profileImg : "img/defaultProfile.jpg"}
+        src={
+          profileImg && profileImg.startsWith("https://4terms3buket")
+            ? profileImg
+            : "img/defaultProfile.jpg"
+        }
       />
     </PictureBox>
   );
