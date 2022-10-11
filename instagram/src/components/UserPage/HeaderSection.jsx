@@ -10,7 +10,7 @@ function HeaderSection({ isMyPage, userName, userNickname, postData }) {
     <HeaderContainer>
       <IdEditGear isMyPage={isMyPage} userNickname={userNickname} />
       <PostsFollows postData={postData} />
-      <UserName>{`${userName}`}</UserName>
+      <UserName>{userName ? `${userName}` : "이름 없음"}</UserName>
     </HeaderContainer>
   );
 }
