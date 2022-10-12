@@ -42,11 +42,17 @@ function UserPage() {
           data: { user },
         } = await axios.get(`user/search/${nickname}`);
         setOtherNo(user[0].no);
+        console.log(otherNo);
       })();
-    }, []);
+    }, [otherNo]);
 
     useEffect(() => {
-      axios.get(`post/profile/41`).then((res) => setOtherPost({ ...res.data }));
+      axios.get(`post/profile/${otherNo}`).then((res) => {
+        setOtherPost({ ...res.data });
+      });
+    }, [otherNo]);
+
+    useEffect(() => {
       axios
         .get(`user/profile/${otherNo}`)
         .then((res) => setOtherInfo({ ...res.data.userinfo }));
