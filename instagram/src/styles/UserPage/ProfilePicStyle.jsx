@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const ProfilePicture = styled.div`
+export const ProfilePicture = styled.img`
   width: 150px;
   height: 150px;
   background-color: lightgray;

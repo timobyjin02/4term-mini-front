@@ -9,11 +9,11 @@ import {
   EditBtn,
 } from "../../styles/UserPage/IdEditGearStyle";
 
-function IdEditGear() {
+function IdEditGear({ userNickname }) {
   return (
     <IdEditGearBox>
       {/* 유저네임, 프로필편집버튼, 톱니바퀴 */}
-      <Nickname>modernAgile_4기</Nickname>
+      <Nickname>{`${userNickname}`}</Nickname>
       <EditButton />
       <Gear />
     </IdEditGearBox>
