@@ -42,7 +42,6 @@ function UserPage() {
           data: { user },
         } = await axios.get(`user/search/${nickname}`);
         setOtherNo(user[0].no);
-        console.log(otherNo);
       })();
     }, [otherNo]);
 
