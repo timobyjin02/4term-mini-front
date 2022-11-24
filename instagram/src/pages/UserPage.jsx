@@ -2,7 +2,7 @@ import Navigation from "./Navigation";
 import UserHeader from "../components/UserPage/UserHeader";
 import UserPostings from "../components/UserPage/UserPostings";
 import HeaderBaseline from "../components/UserPage/HeaderBaseline";
-import { Container } from "../styles//UserPage/UserPageStyle";
+import { Container, PageContainer } from "../styles//UserPage/UserPageStyle";
 import { useState, useEffect } from "react";
 import axios from "../api/config";
 import { getUserNickname, getUserNo } from "../utils/getToken";
@@ -60,7 +60,7 @@ function UserPage() {
     return (
       <>
         {!(otherInfo.name === undefined && otherInfo.nickname === undefined) ? (
-          <>
+          <PageContainer>
             <Navigation />
             <Container>
               <UserHeader
@@ -71,7 +71,7 @@ function UserPage() {
               <HeaderBaseline />
               <UserPostings postData={otherPost} />
             </Container>
-          </>
+          </PageContainer>
         ) : null}
       </>
     );
@@ -81,7 +81,7 @@ function UserPage() {
     <>
       {isLoaded ? (
         isMyPage ? (
-          <>
+          <PageContainer>
             <Navigation />
             <Container>
               <UserHeader
@@ -92,7 +92,7 @@ function UserPage() {
               <HeaderBaseline />
               <UserPostings postData={postData} />
             </Container>
-          </>
+          </PageContainer>
         ) : (
           <OtherPage />
         )
