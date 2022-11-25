@@ -50,7 +50,10 @@ function Menu() {
         <Notification className="icon" />
       </Link>
       <Link to={`/${nickname}`}>
-        <ProfileImage alt="profile image" src={myProfileImg.profileImg} />
+        <ProfileImage
+          alt="profile image"
+          src={myProfileImg.profileImg || "img/profile.png"}
+        />
       </Link>
     </Wrap>
   );
