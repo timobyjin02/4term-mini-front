@@ -7,14 +7,13 @@ export const Wrapper = styled.div`
   padding-top: 6px;
   padding-bottom: 6px;
   background-color: white;
-  z-index: 999;
+  z-index: 1;
   border: 1px solid #f7f7f7;
-  box-shadow: 0 2px 1px 0px rgba(0, 0, 0, .08);
+  box-shadow: 0 2px 1px 0px rgba(0, 0, 0, 0.08);
   width: 100%;
 `;
 
-export const List = styled.ul`
-`;
+export const List = styled.ul``;
 
 export const Item = styled.li`
   display: flex;
