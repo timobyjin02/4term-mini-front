@@ -13,7 +13,6 @@ function ItemDetail({ itemName, keyName, userData, setUserData }) {
       ...userData,
       [keyName]: event.target.value,
     });
-    console.log(userData);
   };
 
   return (

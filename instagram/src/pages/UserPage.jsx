@@ -2,7 +2,7 @@ import Navigation from "./Navigation";
 import UserHeader from "../components/UserPage/UserHeader";
 import UserPostings from "../components/UserPage/UserPostings";
 import HeaderBaseline from "../components/UserPage/HeaderBaseline";
-import { Container } from "../styles//UserPage/UserPageStyle";
+import { Container, PageContainer } from "../styles//UserPage/UserPageStyle";
 import { useState, useEffect } from "react";
 import axios from "../api/config";
 import { getUserNickname, getUserNo } from "../utils/getToken";
@@ -43,10 +43,15 @@ function UserPage() {
         } = await axios.get(`user/search/${nickname}`);
         setOtherNo(user[0].no);
       })();
-    }, []);
+    }, [otherNo]);
 
     useEffect(() => {
-      axios.get(`post/profile/41`).then((res) => setOtherPost({ ...res.data }));
+      axios.get(`post/profile/${otherNo}`).then((res) => {
+        setOtherPost({ ...res.data });
+      });
+    }, [otherNo]);
+
+    useEffect(() => {
       axios
         .get(`user/profile/${otherNo}`)
         .then((res) => setOtherInfo({ ...res.data.userinfo }));
@@ -55,7 +60,7 @@ function UserPage() {
     return (
       <>
         {!(otherInfo.name === undefined && otherInfo.nickname === undefined) ? (
-          <>
+          <PageContainer>
             <Navigation />
             <Container>
               <UserHeader
@@ -66,7 +71,7 @@ function UserPage() {
               <HeaderBaseline />
               <UserPostings postData={otherPost} />
             </Container>
-          </>
+          </PageContainer>
         ) : null}
       </>
     );
@@ -76,7 +81,7 @@ function UserPage() {
     <>
       {isLoaded ? (
         isMyPage ? (
-          <>
+          <PageContainer>
             <Navigation />
             <Container>
               <UserHeader
@@ -87,7 +92,7 @@ function UserPage() {
               <HeaderBaseline />
               <UserPostings postData={postData} />
             </Container>
-          </>
+          </PageContainer>
         ) : (
           <OtherPage />
         )
