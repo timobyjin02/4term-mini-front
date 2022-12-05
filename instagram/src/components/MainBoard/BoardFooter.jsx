@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import FooterMenu from "./FooterMenu";
 import Comment from "../Comment/Comment";
 import {
@@ -23,9 +24,12 @@ function BoardFooter({ nickname, postNo, content, onShowModal }) {
 }
 
 function Contents({ nickname, content }) {
+  const navigate = useNavigate();
   return (
     <NicknameAndContent>
-      <ContentsNickname>{nickname}</ContentsNickname>
+      <ContentsNickname onClick={() => navigate(`/${nickname}`)}>
+        {nickname}
+      </ContentsNickname>
       <Content>{content}</Content>
     </NicknameAndContent>
   );

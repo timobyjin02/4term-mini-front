@@ -39,6 +39,7 @@ export const UserId = styled.p`
   padding-left: 8px;
   font-weight: 500;
   font-size: 0.9em;
+  cursor: pointer;
 `;
 
 export const Image = styled.img`
@@ -61,9 +62,7 @@ export const LikeText = styled.p`
   font-weight: 700;
 `;
 
-export const FooterContainer = styled.div`
-  
-`;
+export const FooterContainer = styled.div``;
 
 export const NicknameAndContent = styled.div`
   margin-left: 12px;
@@ -75,6 +74,7 @@ export const ContentsNickname = styled.p`
   margin: 8px 8px 0px 0px;
   font-size: 14px;
   font-weight: 700;
+  cursor: pointer;
 `;
 
 export const Content = styled.p`

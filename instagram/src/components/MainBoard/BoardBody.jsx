@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Header,
   ProfileImage,
@@ -7,15 +8,16 @@ import {
 } from "../../styles/MainBoard/MainBoardStyle";
 
 function BoardBody({ profileImage, nickname, images }) {
+  const navigate = useNavigate();
   return (
     <>
       <Header>
-        {profileImage ? (
-          <ProfileImage alt="profile image" src={profileImage} />
-        ) : (
-          <ProfileImage alt="profile image" src="/img/profile.png" />
-        )}
-        <UserId>{nickname}</UserId>
+        <ProfileImage
+          onClick={() => navigate(`/${nickname}`)}
+          alt="profile image"
+          src={profileImage || "/img/profile.png"}
+        />
+        <UserId onClick={() => navigate(`/${nickname}`)}>{nickname}</UserId>
       </Header>
       <Image src={images[0]}></Image>
     </>
